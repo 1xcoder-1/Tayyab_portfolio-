@@ -1,0 +1,44 @@
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import AboutContent from './About UI/AboutContent';
+
+
+const About = () => {
+    const sectionRef = useRef<HTMLElement>(null);
+
+
+    return (
+        <section
+            ref={sectionRef}
+            className="relative w-full z-20"
+            id="about"
+            style={{
+                marginTop: '-15vw',
+                paddingTop: '25vw',
+                paddingBottom: '12rem',
+                clipPath: 'polygon(0 15vw, 100% 0, 100% 85%, 0 100%)',
+                background: 'radial-gradient(91% 104% at 6.7% 3.4%, #352842 0%, #0D0219 100%)'
+            }}
+        >
+            {/* Background Text Entrance */}
+            <div className="absolute inset-0 overflow-hidden flex items-center justify-center pointer-events-none select-none">
+                <motion.span
+                    initial={{ opacity: 0, y: 30, rotate: -7 }}
+                    whileInView={{ opacity: 0.04, y: 0, rotate: -9 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.8, ease: "easeOut", delay: 0.2 }}
+                    className="text-[23vw] font-black text-white whitespace-nowrap leading-none tracking-[0.05em] uppercase"
+                    style={{
+                        fontWeight: 900
+                    }}
+                >
+                    ABOUT
+                </motion.span>
+            </div>
+
+            <AboutContent />
+        </section>
+    );
+};
+
+export default About;

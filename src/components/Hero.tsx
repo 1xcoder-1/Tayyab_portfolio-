@@ -1,0 +1,316 @@
+import HeroBackground from './HeroBackground';
+import { motion, type Variants, useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
+
+interface HeroProps {
+    startAnimation: boolean;
+}
+
+const Hero = ({ startAnimation }: HeroProps) => {
+    const text = "Freelancer UI/UX Designer";
+    const controls = useAnimation();
+
+    useEffect(() => {
+        if (startAnimation) {
+            controls.start("visible");
+        } else {
+            controls.set("hidden");
+        }
+    }, [startAnimation, controls]);
+
+    const containerVariants: Variants = {
+        hidden: { opacity: 1 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.05,
+                delayChildren: 0.1,
+            }
+        }
+    };
+    const childVariants: Variants = {
+        hidden: {
+            opacity: 0,
+            y: 20,
+            filter: 'blur(10px)',
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            transition: {
+                duration: 0.8,
+                ease: [0.16, 1, 0.3, 1] as const,
+            }
+        }
+    };
+
+    return (
+        <section className="relative w-full min-h-screen flex flex-col items-center justify-center pt-25 pb-20 overflow-hidden bg-white" id="hero">
+            <HeroBackground />
+            <div className="relative z-10 w-full max-w-[1400px] px-6 flex flex-col items-center text-center">
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 15 },
+                        visible: { opacity: 1, y: 0 }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
+                    className="mb-3"
+                >
+                    <motion.a
+                        href="#footer-trigger"
+                        initial="initial"
+                        whileHover="hover"
+                        variants={{
+                            hover: {
+                                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)"
+                            }
+                        }}
+                        className="flex items-center gap-2.5 p-[10px_20px_10px_12px] bg-white rounded-[50px] shadow-[0_0.5px_1px_-1px_rgba(0,0,0,0.08),0_4px_8.8px_-2px_rgba(0,0,0,0.12)] cursor-pointer group transition-shadow duration-300"
+                    >
+                        <motion.div
+                            variants={{
+                                hover: { scale: 1.8, rotate: 14 }
+                            }}
+                            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                            className="w-8 h-8 rounded-full bg-[#6133ed] overflow-hidden flex-shrink-0 shadow-[0_2px_4px_rgba(97,51,237,0.2)]"
+                        >
+                            <img
+                                src="https://framerusercontent.com/images/wMBFQWbWyZ668yZ7H0x1spjyH4.png?scale-down-to=512&width=1024&height=1024"
+                                alt="Tayyab"
+                                className="w-full h-full object-cover"
+                            />
+                        </motion.div>
+                        <motion.span
+                            variants={{
+                                hover: { x: 2, color: '#2970ff' }
+                            }}
+                            transition={{ duration: 0.3 }}
+                            className="text-[17px] font-medium text-[#646e82] tracking-tight leading-none"
+                        >
+                            Hey, I'm Tayyab
+                        </motion.span>
+                    </motion.a>
+                </motion.div>
+
+                <div className="w-full px-4 select-none overflow-hidden flex justify-center mb-4">
+                    <motion.h1
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate={controls}
+                        className="text-[clamp(1.5rem,7vw,11rem)] font-[600] tracking-[1.2px] leading-none text-[#A855F7] whitespace-nowrap text-center"
+                        style={{ perspective: '1000px' }}
+                    >
+                        {text.split("").map((char, index) => (
+                            <motion.span
+                                key={index}
+                                variants={childVariants}
+                                style={{ display: 'inline-block', whiteSpace: char === " " ? "pre" : "normal" }}
+                            >
+                                {char}
+                            </motion.span>
+                        ))}
+                    </motion.h1>
+                </div>
+
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 1, ease: [0.16, 1, 0.3, 1] as const } }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    className="flex justify-center w-full"
+                >
+                    <motion.a
+                        href="#"
+                        initial="initial"
+                        whileHover="hover"
+                        whileTap={{ scale: 0.97 }}
+                        className="relative group inline-block p-[1.5px] overflow-hidden"
+                    >
+                        <div className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#00000000_50%,#A855F7_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                        <div className="relative flex items-center gap-2 px-5 py-2 z-10"
+                            style={{
+                                background: 'linear-gradient(161deg, #6d28d9 0%, #130321 47.75%, #6d28d9 100%)'
+                            }}
+                        >
+                            <span className="font-medium text-lg tracking-wide text-white group-hover:translate-x-1 transition-transform duration-300">Let's Work</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300 delay-75">
+                                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                            </svg>
+                        </div>
+                    </motion.a>
+                </motion.div>
+            </div>
+
+            <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden select-none md:opacity-100">
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 100 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 1.0, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    whileHover={{ scale: 1.12, rotate: -6, zIndex: 50 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute top-[12%] left-[2.5%] w-[358px] max-w-[492px] will-change-transform pointer-events-auto cursor-pointer"
+                    style={{ filter: 'drop-shadow(rgba(4, 18, 36, 0.2) 0px 23px 22px)' }}
+                >
+                    <img
+                        src="https://framerusercontent.com/images/T0xk9MPN8K90vJzlN6AnNxy0CVM.jpg?width=2880&height=1920"
+                        className="w-full h-auto object-cover"
+                        alt="Project 1"
+                    />
+                </motion.div>
+
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 100 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 1.0, delay: 0.1, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    whileHover={{ scale: 1.12, rotate: -8, zIndex: 50 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute top-[6%] left-[43.5%] w-[21%] max-w-[320px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden z-20 pointer-events-auto cursor-pointer"
+                >
+                    <img src="https://framerusercontent.com/images/kkJ5ppCn4pWHkdkfo9veY9UMhR4.jpg?scale-down-to=512&width=2880&height=1900" className="w-full h-auto" alt="Project 2" />
+                </motion.div>
+
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 100 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 1.0, delay: 0.2, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    whileHover={{ scale: 1.12, rotate: -5 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute top-[4%] right-[24%] w-[16%] max-w-[200px] shadow-[0_15px_30px_rgba(0,0,0,0.08)] overflow-hidden z-10 pointer-events-auto cursor-pointer"
+                >
+                    <img src="https://framerusercontent.com/images/NcBaP9dutnmOJ6g68UosYx0rf8.jpg?scale-down-to=512&width=3840&height=2160" className="w-full h-auto" alt="Project 3" />
+                </motion.div>
+
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 100 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 1.0, delay: 0.3, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    whileHover={{ scale: 1.12, rotate: -7 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute top-[20%] right-[7%] w-[24%] max-w-[260px] shadow-[0_40px_80px_rgba(0,0,0,0.18)] overflow-hidden pointer-events-auto cursor-pointer"
+                >
+                    <img src="https://framerusercontent.com/images/Q9aQxHOeEFsYjZwF6gQLGpVcwoY.png?scale-down-to=512&width=1024&height=576" className="w-full h-auto" alt="Project 4" />
+                </motion.div>
+            </div>
+
+            <div className="absolute inset-0 z-0 pointer-events-none flex flex-col justify-end">
+            </div>
+
+            <div className="absolute inset-0 z-[25] pointer-events-none overflow-hidden select-none">
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 110 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.65, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    whileHover={{ scale: 1.12, rotate: -7 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute pointer-events-auto cursor-pointer z-[26] will-change-transform"
+                    style={{
+                        width: '19%',
+                        height: '200px',
+                        maxWidth: '280px',
+                        bottom: '0.2%',
+                        left: '-2.2%',
+                        filter: 'drop-shadow(rgba(4, 18, 36, 0.2) 0px 23px 22px)'
+                    }}
+                >
+                    <img
+                        src="https://framerusercontent.com/images/Vfa6TBqZDuBq870v5CSWzANbOw8.png?scale-down-to=512&width=2524&height=1517"
+                        className="w-full h-full object-contain"
+                        alt="Project Back"
+                    />
+                </motion.div>
+
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 100 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    whileHover={{ scale: 1.12, rotate: -7, zIndex: 60 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute overflow-hidden pointer-events-auto cursor-pointer shadow-3xl z-[27] will-change-transform"
+                    style={{
+                        width: '305px',
+                        height: '210px',
+                        maxWidth: '420px',
+                        bottom: '10%',
+                        left: '8%'
+                    }}
+                >
+                    <img
+                        src="https://framerusercontent.com/images/CzTKnQM3Ni5UC2s1a3GHsULyjc.png?scale-down-to=512&width=1600&height=1200"
+                        alt="Shoe Showcase"
+                        className="w-full h-full object-cover"
+                    />
+                </motion.div>
+
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 30 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    whileHover={{ scale: 1.12, rotate: -8 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute bottom-[-2%] right-[6%] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden z-20 pointer-events-auto cursor-pointer"
+                    style={{
+                        width: '35%',
+                        height: '260px',
+                        maxWidth: '430px',
+                    }}
+                >
+                    <img src="https://framerusercontent.com/images/wClkgFBrUpNSL2lM5Jd4RlBkKw.png?scale-down-to=1024&width=3840&height=2880" className="w-full h-full object-cover" alt="Bottom Project 1" />
+                </motion.div>
+
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    initial="hidden"
+                    animate={controls}
+                    whileHover={{ scale: 1.12, rotate: -5 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute bottom-[17%] right-[2%] shadow-[0_15px_30px_rgba(0,0,0,0.08)] overflow-hidden z-10 pointer-events-auto cursor-pointer"
+                    style={{
+                        width: '16.6%',
+                        height: '135px',
+                        maxWidth: '300px',
+                    }}
+                >
+                    <img src="https://framerusercontent.com/images/PBiar2Ea4Sdo8SPqnqtAWF4ZIg.png?scale-down-to=512&width=3840&height=2160" className="w-full h-full object-cover" alt="Bottom Project 2" />
+                </motion.div>
+            </div>
+
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]">
+                {[0, 25, 50, 75, 100].map((top) => (
+                    <div key={top} className="absolute w-full h-px bg-black skew-y-[-10deg]" style={{ top: `${top}%` }} />
+                ))}
+            </div>
+        </section>
+    );
+};
+
+export default Hero;
