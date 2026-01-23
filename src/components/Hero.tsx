@@ -1,6 +1,7 @@
+import { useEffect } from 'react';
 import HeroBackground from './HeroBackground';
 import { motion, type Variants, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
+import { Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8 } from '../Images';
 
 interface HeroProps {
     startAnimation: boolean;
@@ -157,12 +158,18 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -6, zIndex: 50 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute top-[12%] left-[2.5%] w-[358px] max-w-[492px] will-change-transform pointer-events-auto cursor-pointer"
-                    style={{ filter: 'drop-shadow(rgba(4, 18, 36, 0.2) 0px 23px 22px)' }}
+                    className="absolute overflow-hidden pointer-events-auto cursor-pointer shadow-3xl z-[27] will-change-transform"
+                    style={{
+                        width: '380px',
+                        height: '240px',
+                        maxWidth: '492px',
+                        top: '12%',
+                        left: '2.5%'
+                    }}
                 >
                     <img
-                        src="https://framerusercontent.com/images/T0xk9MPN8K90vJzlN6AnNxy0CVM.jpg?width=2880&height=1920"
-                        className="w-full h-auto object-cover"
+                        src={Img8}
+                        className="w-full h-full object-cover"
                         alt="Project 1"
                     />
                 </motion.div>
@@ -176,9 +183,9 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -8, zIndex: 50 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute top-[6%] left-[43.5%] w-[21%] max-w-[320px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden z-20 pointer-events-auto cursor-pointer"
+                    className="absolute top-[-5%] left-[43.5%] w-[29%] max-w-[320px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden z-20 pointer-events-auto cursor-pointer"
                 >
-                    <img src="https://framerusercontent.com/images/kkJ5ppCn4pWHkdkfo9veY9UMhR4.jpg?scale-down-to=512&width=2880&height=1900" className="w-full h-auto" alt="Project 2" />
+                    <img src={Img1} className="w-full h-auto" alt="Project 2" />
                 </motion.div>
 
                 <motion.div
@@ -190,9 +197,9 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -5 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute top-[4%] right-[24%] w-[16%] max-w-[200px] shadow-[0_15px_30px_rgba(0,0,0,0.08)] overflow-hidden z-10 pointer-events-auto cursor-pointer"
+                    className="absolute top-[-1%] right-[24%] w-[16%] max-w-[200px] shadow-[0_15px_30px_rgba(0,0,0,0.08)] overflow-hidden z-10 pointer-events-auto cursor-pointer"
                 >
-                    <img src="https://framerusercontent.com/images/NcBaP9dutnmOJ6g68UosYx0rf8.jpg?scale-down-to=512&width=3840&height=2160" className="w-full h-auto" alt="Project 3" />
+                    <img src={Img5} className="w-full h-auto" alt="Project 3" />
                 </motion.div>
 
                 <motion.div
@@ -204,9 +211,9 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -7 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute top-[20%] right-[7%] w-[24%] max-w-[260px] shadow-[0_40px_80px_rgba(0,0,0,0.18)] overflow-hidden pointer-events-auto cursor-pointer"
+                    className="absolute top-[21%] right-[6%] w-[24%] max-w-[260px] shadow-[0_40px_80px_rgba(0,0,0,0.18)] overflow-hidden pointer-events-auto cursor-pointer"
                 >
-                    <img src="https://framerusercontent.com/images/Q9aQxHOeEFsYjZwF6gQLGpVcwoY.png?scale-down-to=512&width=1024&height=576" className="w-full h-auto" alt="Project 4" />
+                    <img src={Img4} className="w-full h-auto" alt="Project 4" />
                 </motion.div>
             </div>
 
@@ -234,7 +241,7 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     }}
                 >
                     <img
-                        src="https://framerusercontent.com/images/Vfa6TBqZDuBq870v5CSWzANbOw8.png?scale-down-to=512&width=2524&height=1517"
+                        src={Img2}
                         className="w-full h-full object-contain"
                         alt="Project Back"
                     />
@@ -259,7 +266,7 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     }}
                 >
                     <img
-                        src="https://framerusercontent.com/images/CzTKnQM3Ni5UC2s1a3GHsULyjc.png?scale-down-to=512&width=1600&height=1200"
+                        src={Img3}
                         alt="Shoe Showcase"
                         className="w-full h-full object-cover"
                     />
@@ -277,11 +284,11 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     className="absolute bottom-[-2%] right-[6%] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden z-20 pointer-events-auto cursor-pointer"
                     style={{
                         width: '35%',
-                        height: '260px',
+                        height: '290px',
                         maxWidth: '430px',
                     }}
                 >
-                    <img src="https://framerusercontent.com/images/wClkgFBrUpNSL2lM5Jd4RlBkKw.png?scale-down-to=1024&width=3840&height=2880" className="w-full h-full object-cover" alt="Bottom Project 1" />
+                    <img src={Img7} className="w-full h-full object-cover" alt="Bottom Project 1" />
                 </motion.div>
 
                 <motion.div
@@ -300,7 +307,7 @@ const Hero = ({ startAnimation }: HeroProps) => {
                         maxWidth: '300px',
                     }}
                 >
-                    <img src="https://framerusercontent.com/images/PBiar2Ea4Sdo8SPqnqtAWF4ZIg.png?scale-down-to=512&width=3840&height=2160" className="w-full h-full object-cover" alt="Bottom Project 2" />
+                    <img src={Img6} className="w-full h-full object-cover" alt="Bottom Project 2" />
                 </motion.div>
             </div>
 

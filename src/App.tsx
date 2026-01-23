@@ -5,6 +5,12 @@ import Loader from './components/Loader';
 import { AnimatePresence } from 'framer-motion';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
+import TruckerPathWebsitePage from './pages/sub-project-pages/TruckerPathWebsitePage';
+import SoftWindTemplatePage from './pages/sub-project-pages/SoftWindTemplatePage';
+import TruckerPathAppPage from './pages/sub-project-pages/TruckerPathAppPage';
+import CamhomeTemplatePage from './pages/sub-project-pages/CamhomeTemplatePage';
+import CommandTMSPage from './pages/sub-project-pages/CommandTMSPage';
+import MyPlaygroundPage from './pages/sub-project-pages/MyPlaygroundPage';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,6 +48,12 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage loading={loading} />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/trucker-path-website" element={<TruckerPathWebsitePage />} />
+        <Route path="/projects/soft-wind-template" element={<SoftWindTemplatePage />} />
+        <Route path="/projects/trucker-path-app" element={<TruckerPathAppPage />} />
+        <Route path="/projects/camhome-template" element={<CamhomeTemplatePage />} />
+        <Route path="/projects/command-tms" element={<CommandTMSPage />} />
+        <Route path="/projects/my-playground" element={<MyPlaygroundPage />} />
       </Routes>
     </>
   );

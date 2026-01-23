@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const projectsData = [
     {
-        title: "Trucker Path Website",
-        tags: ["Web Design", "Landing Page"],
+        title: "Notes Flow",
+        tags: ["iOS App", "Mobile App"],
         images: [
             "https://framerusercontent.com/images/f56Ypn22t6pS8WVqfh1LgROeAdw.jpg?scale-down-to=512&width=3840&height=2880",
             "https://framerusercontent.com/images/JbmXUIwAhIX4AoKPxlOa9qOd8.jpg?scale-down-to=512&width=3840&height=2160",
@@ -14,8 +14,8 @@ const projectsData = [
         ],
     },
     {
-        title: "Soft Wind Template",
-        tags: ["Framer", "Template"],
+        title: "Water Tracker",
+        tags: ["iOS app", "Mobile App"],
         images: [
             "https://framerusercontent.com/images/kkJ5ppCn4pWHkdkfo9veY9UMhR4.jpg?scale-down-to=512&width=2880&height=1900",
             "https://framerusercontent.com/images/45RB4RKwenH2YRUmCIKbv62x05w.jpg?scale-down-to=512&width=3840&height=2160",
@@ -23,8 +23,8 @@ const projectsData = [
         ],
     },
     {
-        title: "Trucker Path App",
-        tags: ["UIUX Design", "B2C"],
+        title: "Ecoomerce App",
+        tags: ["macOS app", "Ecommerce"],
         images: [
             "https://framerusercontent.com/images/uLdyzLwa0zeiSrFZlT9rVUEr4U.jpg?scale-down-to=512&width=2880&height=1920",
             "https://framerusercontent.com/images/kiBWFLyUMVZVWnwRBX3CnZcLIc.jpg?scale-down-to=2048&width=5760&height=3240",

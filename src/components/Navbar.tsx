@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { Smile, Briefcase, AtSign, X, Home } from 'lucide-react';
+import { Smile, Briefcase, AtSign, X, Home, MessageSquare } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 
 const Navbar = () => {
+
     const [isOpen, setIsOpen] = useState(false);
     const [isWhiteTheme, setIsWhiteTheme] = useState(false);
     const location = useLocation();
@@ -38,6 +39,16 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
+            if (location.pathname === '/projects/trucker-path-website') {
+                setIsWhiteTheme(true);
+                return;
+            }
+            if (location.pathname === '/projects/trucker-path-app') {
+                setIsWhiteTheme(true);
+                return;
+            }
+
+
             const aboutSection = document.getElementById('about');
             const projectsSection = document.getElementById('projects');
             const testimonialsSection = document.getElementById('testimonials');
@@ -91,10 +102,18 @@ const Navbar = () => {
         };
     }, [location.pathname]);
 
+    // Force white theme for specific pages
+    useEffect(() => {
+        if (location.pathname === '/projects/trucker-path-website') {
+            setIsWhiteTheme(true);
+        }
+    }, [location.pathname]);
+
     const menuItems = [
         ...(location.pathname === '/projects' ? [{ icon: <Home size={32} />, label: 'Home', href: '/' }] : []),
         { icon: <Smile size={32} />, label: 'About', href: '/#about' },
         { icon: <Briefcase size={32} />, label: 'Work', href: '/#projects' },
+        { icon: <MessageSquare size={32} />, label: 'Reviews', href: '/#testimonials' },
         { icon: <AtSign size={32} />, label: 'Contact', href: '/#contact' },
     ];
 

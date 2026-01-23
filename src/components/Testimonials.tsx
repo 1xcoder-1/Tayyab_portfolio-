@@ -169,7 +169,7 @@ const Testimonials = () => {
                             ))}
                         </motion.h2>
                         {/* Purple Line */}
-                        <div className="absolute top-[20%] left-[-2%] w-[20%] h-[6px] md:h-[7px] bg-[#A855F7] transform -rotate-8 z-40 mix-blend-normal" />
+                        <div className="absolute top-[20%] left-[-2%] w-[40%] h-[6px] md:h-[7px] bg-[#A855F7] transform -rotate-8 z-40 mix-blend-normal" />
                     </div>
 
                     {/* Testimonial Cards Container */}

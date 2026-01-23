@@ -1,11 +1,19 @@
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 interface ProjectItemProps {
     title: string;
     images: string[];
     tags: string[];
 }
+
+const generateSlug = (title: string): string => {
+    return title
+        .toLowerCase()
+        .replace(/[\s_]+/g, '-')
+        .replace(/[^a-z0-9-]/g, '');
+};
 
 const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
     const imageVariants = {
@@ -148,10 +156,10 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                                 ))}
                             </div>
 
-                            <button className="group/btn flex items-center gap-2 text-[20px]  text-black ">
+                            <Link to={`/projects/${generateSlug(title)}`} className="group/btn flex items-center gap-2 text-[20px]  text-black">
                                 View Details
                                 <ArrowRight className="w-8 h-8 transition-transform group-hover/btn:translate-x-2" />
-                            </button>
+                            </Link>
                         </div>
                     </motion.div>
 
