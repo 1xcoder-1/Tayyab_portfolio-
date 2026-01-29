@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView, useScroll, useTransform, type Variants } from 'framer-motion';
 import { Hexagon } from 'lucide-react';
 
@@ -9,7 +9,7 @@ const testimonialsData = [
         role: "Senior Product Manager",
         quote: (
             <>
-                Boyce's <strong className="font-extrabold text-white">imagination</strong> always brings fresh ideas that push creative boundaries.
+                Boyce's imagination always brings fresh ideas that push creative boundaries.
             </>
         ),
         image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
@@ -24,7 +24,7 @@ const testimonialsData = [
         role: "Front-End Developer",
         quote: (
             <>
-                Quickly <strong className="font-extrabold text-white">understands</strong> complex ideas and makes collaboration easy with clear communication.
+                Quickly understands complex ideas and makes collaboration easy with clear communication.
             </>
         ),
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
@@ -39,7 +39,7 @@ const testimonialsData = [
         role: "Back-End Developer",
         quote: (
             <>
-                Creative, <strong className="font-extrabold text-white">technically skilled</strong>, and always a step ahead—Boyce is a great problem-solver.
+                Creative, technically skilled, and always a step ahead—Boyce is a great problem-solver.
             </>
         ),
         image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
@@ -51,6 +51,16 @@ const testimonialsData = [
 ];
 
 const Testimonials = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     // Animation Controls used for Heading
     const controls = useAnimation();
@@ -85,7 +95,7 @@ const Testimonials = () => {
         }
     }, [isHeadingInView, controls]);
 
-    const headingText = "Why Partners Trust Me";
+
 
     const containerVariants: Variants = {
         hidden: { opacity: 1 },
@@ -137,63 +147,86 @@ const Testimonials = () => {
         <section
             ref={sectionRef}
             id="testimonials"
-            className="relative w-full z-20"
+            className="relative w-full z-20 mt-[-13vw] md:mt-[-8vw] [clip-path:polygon(0_12vw,100%_0,100%_96%,0%_100%)] md:[clip-path:polygon(0_13vw,100%_2%,100%_92%,0%_100%)]"
             style={{
-                height: '200vh', // Reduced scroll height
-                marginTop: '-13vw',
+                height: isMobile ? 'auto' : '200vh', // Auto height for mobile stack
                 paddingTop: '0',
-                // paddingBottom: '15rem', // Handled by height
-                clipPath: 'polygon(0 13vw, 100% 2%, 100% 93%, 0 100%)',
                 background: 'radial-gradient(91% 104% at 6.7% 3.4%, #352842 0%, #0D0219 100%)'
             }}
         >
-            <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center pt-[10vh] overflow-hidden">
+            <div className={`w-full flex flex-col items-center justify-center pt-[10vh] md:pt-[15vh] ${isMobile ? 'relative pb-24' : 'sticky top-0 h-screen overflow-hidden'}`}>
                 <div className="max-w-[1240px] w-full mx-auto px-6 md:px-12 relative z-10">
 
                     {/* Heading */}
-                    <div ref={headingRef} className="relative mb-16 inline-block">
+                    <div ref={headingRef} className="relative mb-8 md:mb-16 inline-block">
                         <motion.h2
                             variants={containerVariants}
                             initial="hidden"
                             animate={controls}
-                            className="text-4xl md:text-[50px] font-semibold tracking-tighter [word-spacing:5px] text-white relative z-30"
+                            className="text-[46px] md:text-[50px] font-bold tracking-[1px] [word-spacing:5px] text-white relative z-30 flex flex-col items-start md:block"
                         >
-                            {headingText.split("").map((char, index) => (
-                                <motion.span
-                                    key={index}
-                                    variants={childVariants}
-                                    style={{ display: 'inline-block', whiteSpace: char === " " ? "pre" : "normal" }}
-                                >
-                                    {char}
-                                </motion.span>
-                            ))}
+                            <span className="block md:inline whitespace-nowrap">
+                                {"Why Partners ".split("").map((char, index) => (
+                                    <motion.span
+                                        key={`line1-${index}`}
+                                        variants={childVariants}
+                                        style={{ display: 'inline-block', whiteSpace: char === " " ? "pre" : "normal" }}
+                                    >
+                                        {char}
+                                    </motion.span>
+                                ))}
+                            </span>
+                            <span className="block md:inline whitespace-nowrap">
+                                {"Trust Me".split("").map((char, index) => (
+                                    <motion.span
+                                        key={`line2-${index}`}
+                                        variants={childVariants}
+                                        style={{ display: 'inline-block', whiteSpace: char === " " ? "pre" : "normal" }}
+                                    >
+                                        {char}
+                                    </motion.span>
+                                ))}
+                            </span>
                         </motion.h2>
-                        {/* Purple Line */}
-                        <div className="absolute top-[20%] left-[-2%] w-[40%] h-[6px] md:h-[7px] bg-[#A855F7] transform -rotate-8 z-40 mix-blend-normal" />
+                        {/* Purple Accent Line matching the about section */}
+                        <div className="absolute top-[18%] md:top-[33%] left-[-1%] w-[60px] md:w-[80px] h-[6px] md:h-[7px] bg-[#A855F7] transform -rotate-8 z-40 mix-blend-normal" />
                     </div>
 
                     {/* Testimonial Cards Container */}
-                    <div className="relative w-full h-[400px] flex items-center justify-center md:justify-start mt-8">
+                    <div className={`relative w-full flex ${isMobile ? 'flex-col gap-6' : 'h-[400px] items-center justify-center md:justify-start'} md:mt-8`}>
 
                         {testimonialsData.map((item, index) => {
                             // Dynamic positioning styles
                             let style = {};
-                            if (index === 0) {
-                                style = { x: 0, y: 0, zIndex: 10, scale: 1 }; // Back card, static position, opacity handled by variants
-                            } else if (index === 1) {
-                                style = { x: card2X, rotate: card2Rotate, scale: card2Scale, y: -60, opacity: card2Opacity, left: '30%', zIndex: 20 }; // Middle overlapping, tighter
-                            } else if (index === 2) {
-                                style = { x: card3X, rotate: card3Rotate, scale: card3Scale, y: -120, opacity: card3Opacity, left: '57%', zIndex: 30 }; // Top overlapping, tighter
+                            if (isMobile) {
+                                // Force visibility on mobile to override any previous animation states
+                                style = {
+                                    opacity: 1,
+                                    x: 0,
+                                    y: 0,
+                                    scale: 1,
+                                    rotate: 0,
+                                    filter: 'blur(0px)',
+                                    zIndex: 10
+                                };
+                            } else {
+                                if (index === 0) {
+                                    style = { x: 0, y: 0, zIndex: 10, scale: 1 }; // Back card, static position, opacity handled by variants
+                                } else if (index === 1) {
+                                    style = { x: card2X, rotate: card2Rotate, scale: card2Scale, y: -60, opacity: card2Opacity, left: '30%', zIndex: 20 }; // Middle overlapping, tighter
+                                } else if (index === 2) {
+                                    style = { x: card3X, rotate: card3Rotate, scale: card3Scale, y: -120, opacity: card3Opacity, left: '57%', zIndex: 30 }; // Top overlapping, tighter
+                                }
                             }
 
                             return (
                                 <motion.div
                                     key={item.id}
                                     style={style}
-                                    variants={index === 0 ? firstCardVariants : undefined}
-                                    initial={index === 0 ? "hidden" : undefined}
-                                    animate={index === 0 ? controls : undefined}
-                                    className={`absolute w-full max-w-[500px] shadow-2xl group ${item.className}`}
+                                    variants={!isMobile && index === 0 ? firstCardVariants : undefined}
+                                    initial={!isMobile && index === 0 ? "hidden" : "visible"}
+                                    animate={isMobile ? { opacity: 1, y: 0, filter: 'blur(0px)' } : (index === 0 ? controls : undefined)}
+                                    className={`${isMobile ? 'relative w-full' : 'absolute w-full max-w-[500px]'} shadow-2xl group ${item.className}`}
                                 >
                                     {/* Card Content (Height Decreased, No Radius) */}
                                     <div className="h-[310px] w-full flex flex-col relative bg-[#1e293b]">

@@ -2,33 +2,36 @@ import { ArrowRight } from 'lucide-react';
 import ProjectItem from './Projects UI/ProjectItem';
 import { motion, type Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { nimg1, nimg2, nimg3 } from '../Images/Notes Flow';
+import { qimg1, qimg2, qimg3 } from '../Images/Quran App';
+import { wimg1, wimg2, wimg3 } from '../Images/Water Tracker';
 
 const projectsData = [
     {
         title: "Notes Flow",
         tags: ["iOS App", "Mobile App"],
         images: [
-            "https://framerusercontent.com/images/f56Ypn22t6pS8WVqfh1LgROeAdw.jpg?scale-down-to=512&width=3840&height=2880",
-            "https://framerusercontent.com/images/JbmXUIwAhIX4AoKPxlOa9qOd8.jpg?scale-down-to=512&width=3840&height=2160",
-            "https://framerusercontent.com/images/45RB4RKwenH2YRUmCIKbv62x05w.jpg?scale-down-to=512&width=3840&height=2160"
+            nimg1,
+            nimg2,
+            nimg3,
         ],
     },
     {
         title: "Water Tracker",
-        tags: ["iOS app", "Mobile App"],
+        tags: ["iOS App", "Mobile App"],
         images: [
-            "https://framerusercontent.com/images/kkJ5ppCn4pWHkdkfo9veY9UMhR4.jpg?scale-down-to=512&width=2880&height=1900",
-            "https://framerusercontent.com/images/45RB4RKwenH2YRUmCIKbv62x05w.jpg?scale-down-to=512&width=3840&height=2160",
-            "https://framerusercontent.com/images/1nT83OnX9dN1ohgGyDYYhrm2U.jpg?scale-down-to=2048&width=3840&height=2160"
+            wimg1,
+            wimg2,
+            wimg3
         ],
     },
     {
-        title: "Ecoomerce App",
-        tags: ["macOS app", "Ecommerce"],
+        title: "Quran Reader",
+        tags: ["iOS App", "Mobile App"],
         images: [
-            "https://framerusercontent.com/images/uLdyzLwa0zeiSrFZlT9rVUEr4U.jpg?scale-down-to=512&width=2880&height=1920",
-            "https://framerusercontent.com/images/kiBWFLyUMVZVWnwRBX3CnZcLIc.jpg?scale-down-to=2048&width=5760&height=3240",
-            "https://framerusercontent.com/images/KxPqw7Aibv1iFxLZGK2l2qRQLg8.png?scale-down-to=512&width=5760&height=3240"
+            qimg1,
+            qimg2,
+            qimg3
         ],
     }
 ];
@@ -66,7 +69,7 @@ const Projects = () => {
         <section className="relative w-full bg-white py-20 z-20 overflow-hidden" id="projects">
 
             {/* Header Section */}
-            <div className="max-w-[1240px] mx-auto px-6 md:px-12 mb-16">
+            <div className="max-w-[1240px] mx-auto px-6 md:px-12 mb-6 md:mb-16">
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12">
                     {/* Left: Heading & Button */}
                     <div className="flex flex-col items-start gap-6">
@@ -92,7 +95,7 @@ const Projects = () => {
                             </motion.h2>
                             {/* Purple Accent Line matching 'Who am I' style */}
                             <motion.div
-                                className="absolute top-[15%] left-[-1%] w-[30%] h-[20px] md:h-[7px] bg-[#9333ea] transform -rotate-10 z-20 mix-blend-multiply opacity-90"
+                                className="absolute top-[15%] left-[-1%] w-[30%] h-[7px] md:h-[7px] bg-[#9333ea] transform -rotate-10 z-20 mix-blend-multiply opacity-90 pointer-events-none"
                                 initial={{ width: 0, opacity: 0 }}
                                 whileInView={{ width: "30%", opacity: 0.9 }}
                                 transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
@@ -126,7 +129,7 @@ const Projects = () => {
 
                     {/* Right: Description */}
                     <motion.div
-                        className="max-w-xl md:text-right pb-4"
+                        className="max-w-xl md:text-right pb-0 md:pb-4"
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.5 }}

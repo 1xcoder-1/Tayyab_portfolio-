@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import HeroBackground from './HeroBackground';
-import { motion, type Variants, useAnimation } from 'framer-motion';
+import { motion, useAnimation, type Variants } from 'framer-motion';
 import { Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8 } from '../Images';
 
 interface HeroProps {
@@ -8,7 +8,6 @@ interface HeroProps {
 }
 
 const Hero = ({ startAnimation }: HeroProps) => {
-    const text = "Freelancer UI/UX Designer";
     const controls = useAnimation();
 
     useEffect(() => {
@@ -96,23 +95,36 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     </motion.a>
                 </motion.div>
 
-                <div className="w-full px-4 select-none overflow-hidden flex justify-center mb-4">
+                <div className="w-full px-4 select-none flex justify-center mb-8 max-w-[1200px]">
                     <motion.h1
                         variants={containerVariants}
                         initial="hidden"
                         animate={controls}
-                        className="text-[clamp(1.5rem,7vw,11rem)] font-[600] tracking-[1.2px] leading-none text-[#A855F7] whitespace-nowrap text-center"
+                        className="text-[clamp(1.2rem,8vw,11rem)] font-semibold tracking-[0.06em] leading-[0.9] text-[#A855F7] text-center flex flex-col items-center "
                         style={{ perspective: '1000px' }}
                     >
-                        {text.split("").map((char, index) => (
-                            <motion.span
-                                key={index}
-                                variants={childVariants}
-                                style={{ display: 'inline-block', whiteSpace: char === " " ? "pre" : "normal" }}
-                            >
-                                {char}
-                            </motion.span>
-                        ))}
+                        <span className="block">
+                            {"Freelancer UI/UX".split("").map((char, index) => (
+                                <motion.span
+                                    key={`line1-${index}`}
+                                    variants={childVariants}
+                                    style={{ display: 'inline-block', whiteSpace: char === " " ? "pre" : "normal" }}
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
+                        </span>
+                        <span className="block">
+                            {"Designer".split("").map((char, index) => (
+                                <motion.span
+                                    key={`line2-${index}`}
+                                    variants={childVariants}
+                                    style={{ display: 'inline-block', whiteSpace: char === " " ? "pre" : "normal" }}
+                                >
+                                    {char}
+                                </motion.span>
+                            ))}
+                        </span>
                     </motion.h1>
                 </div>
 
@@ -148,7 +160,7 @@ const Hero = ({ startAnimation }: HeroProps) => {
                 </motion.div>
             </div>
 
-            <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden select-none md:opacity-100">
+            <div className="absolute inset-0 z-20 pointer-events-none select-none">
                 <motion.div
                     variants={{
                         hidden: { opacity: 0, y: 100 },
@@ -158,12 +170,10 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -6, zIndex: 50 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute overflow-hidden pointer-events-auto cursor-pointer shadow-3xl z-[27] will-change-transform"
+                    className="absolute top-[18%] md:top-[12%] overflow-hidden pointer-events-auto cursor-pointer shadow-3xl z-[27] will-change-transform"
                     style={{
-                        width: '380px',
-                        height: '240px',
-                        maxWidth: '492px',
-                        top: '12%',
+                        width: 'clamp(180px, 26.4vw, 380px)',
+                        height: 'clamp(115px, 16.7vw, 240px)',
                         left: '2.5%'
                     }}
                 >
@@ -183,9 +193,13 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -8, zIndex: 50 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute top-[-5%] left-[43.5%] w-[29%] max-w-[320px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden z-20 pointer-events-auto cursor-pointer"
+                    className="absolute top-[5%] md:top-[1%] left-[43.5%] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden z-20 pointer-events-auto cursor-pointer"
+                    style={{
+                        width: 'clamp(150px, 29vw, 300px)',
+                        height: 'clamp(95px, 18vw, 200px)',
+                    }}
                 >
-                    <img src={Img1} className="w-full h-auto" alt="Project 2" />
+                    <img src={Img1} className="w-full h-full object-cover" alt="Project 2" />
                 </motion.div>
 
                 <motion.div
@@ -197,7 +211,7 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -5 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute top-[-1%] right-[24%] w-[16%] max-w-[200px] shadow-[0_15px_30px_rgba(0,0,0,0.08)] overflow-hidden z-10 pointer-events-auto cursor-pointer"
+                    className="absolute top-[-1%] right-[24%] w-[12%] md:w-[16%] max-w-[200px] shadow-[0_15px_30px_rgba(0,0,0,0.08)] overflow-hidden z-10 pointer-events-auto cursor-pointer"
                 >
                     <img src={Img5} className="w-full h-auto" alt="Project 3" />
                 </motion.div>
@@ -211,16 +225,20 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -7 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute top-[21%] right-[6%] w-[24%] max-w-[260px] shadow-[0_40px_80px_rgba(0,0,0,0.18)] overflow-hidden pointer-events-auto cursor-pointer"
+                    className="absolute top-[26%] md:top-[21%] right-[6%] shadow-[0_40px_80px_rgba(0,0,0,0.18)] overflow-hidden pointer-events-auto cursor-pointer"
+                    style={{
+                        width: 'clamp(150px, 22vw, 290px)',
+                        height: 'clamp(100px, 13vw, 185px)',
+                    }}
                 >
-                    <img src={Img4} className="w-full h-auto" alt="Project 4" />
+                    <img src={Img4} className="w-full h-full object-cover" alt="Project 4" />
                 </motion.div>
             </div>
 
             <div className="absolute inset-0 z-0 pointer-events-none flex flex-col justify-end">
             </div>
 
-            <div className="absolute inset-0 z-[25] pointer-events-none overflow-hidden select-none">
+            <div className="absolute inset-0 z-[25] pointer-events-none select-none">
                 <motion.div
                     variants={{
                         hidden: { opacity: 0, y: 110 },
@@ -230,12 +248,10 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -7 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute pointer-events-auto cursor-pointer z-[26] will-change-transform"
+                    className="absolute top-[75%] md:top-auto md:bottom-[3%] pointer-events-auto cursor-pointer z-[26] will-change-transform"
                     style={{
-                        width: '19%',
-                        height: '200px',
-                        maxWidth: '280px',
-                        bottom: '0.2%',
+                        width: 'clamp(100px, 19vw, 280px)',
+                        height: 'clamp(100px, 13.9vw, 200px)',
                         left: '-2.2%',
                         filter: 'drop-shadow(rgba(4, 18, 36, 0.2) 0px 23px 22px)'
                     }}
@@ -256,12 +272,10 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -7, zIndex: 60 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute overflow-hidden pointer-events-auto cursor-pointer shadow-3xl z-[27] will-change-transform"
+                    className="absolute top-[68%] md:top-auto md:bottom-[10%] overflow-hidden pointer-events-auto cursor-pointer shadow-3xl z-[27] will-change-transform"
                     style={{
-                        width: '305px',
-                        height: '210px',
-                        maxWidth: '420px',
-                        bottom: '10%',
+                        width: 'clamp(150px, 21.2vw, 305px)',
+                        height: 'clamp(100px, 14.6vw, 210px)',
                         left: '8%'
                     }}
                 >
@@ -281,11 +295,10 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -8 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute bottom-[-2%] right-[6%] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden z-20 pointer-events-auto cursor-pointer"
+                    className="absolute top-[83%] md:top-auto md:bottom-[0%] right-[6%] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden z-20 pointer-events-auto cursor-pointer"
                     style={{
-                        width: '35%',
-                        height: '290px',
-                        maxWidth: '430px',
+                        width: 'clamp(180px, 34vw, 430px)',
+                        height: 'clamp(140px, 18.8vw, 270px)',
                     }}
                 >
                     <img src={Img7} className="w-full h-full object-cover" alt="Bottom Project 1" />
@@ -300,11 +313,10 @@ const Hero = ({ startAnimation }: HeroProps) => {
                     animate={controls}
                     whileHover={{ scale: 1.12, rotate: -5 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute bottom-[17%] right-[2%] shadow-[0_15px_30px_rgba(0,0,0,0.08)] overflow-hidden z-10 pointer-events-auto cursor-pointer"
+                    className="absolute top-[79%] md:top-auto md:bottom-[17%] right-[2%] shadow-[0_15px_30px_rgba(0,0,0,0.08)] overflow-hidden z-10 pointer-events-auto cursor-pointer"
                     style={{
-                        width: '16.6%',
-                        height: '135px',
-                        maxWidth: '300px',
+                        width: 'clamp(100px, 16.6vw, 300px)',
+                        height: 'clamp(90px, 10.4vw, 150px)',
                     }}
                 >
                     <img src={Img6} className="w-full h-full object-cover" alt="Bottom Project 2" />

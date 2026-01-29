@@ -1,6 +1,7 @@
 
 import { motion, type Variants, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import ProjectItem from '../components/Projects UI/ProjectItem';
 import Contact from '../components/Contact';
@@ -108,13 +109,40 @@ const ProjectsPage = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
-                className="relative pt-60 pb-52 overflow-hidden mb-20"
+                className="relative pt-60 pb-52 overflow-hidden mb-20 [clip-path:polygon(0_0,100%_0,100%_93%,0_100%)] md:[clip-path:polygon(0_0,100%_0,100%_85%,0_100%)]"
                 style={{
                     background: 'radial-gradient(91% 104% at 6.7% 3.4%, #1a1421 0%, #05010a 100%)',
-                    clipPath: 'polygon(0 0, 100% 0, 100% 81%, 0 100%)'
                 }}
                 id="projects-header"
             >
+                {/* Back to Home Button */}
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                    className="absolute top-24 left-6 z-50 md:left-12"
+                >
+                    <Link
+                        to="/"
+                        className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-md transition-all duration-300 group"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="text-white group-hover:-translate-x-1 transition-transform duration-300"
+                        >
+                            <path d="m15 18-6-6 6-6" />
+                        </svg>
+                        <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">Back to Home</span>
+                    </Link>
+                </motion.div>
                 {/* Background Text Entrance */}
                 <div className="absolute inset-0 overflow-hidden flex items-center justify-center pointer-events-none select-none">
                     <motion.span

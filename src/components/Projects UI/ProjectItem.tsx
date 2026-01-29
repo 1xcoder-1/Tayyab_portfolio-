@@ -30,7 +30,7 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
     };
 
     return (
-        <div className="relative w-full py-4 group overflow-hidden">
+        <div className="relative w-full py-0 md:py-4 group overflow-hidden">
 
             {/* Background Stripes - Split Design - NO ANIMATION */}
             <div className="absolute inset-0 z-0 pointer-events-none">
@@ -50,11 +50,11 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                 />
             </div>
 
-            <div className="max-w-[1240px] mx-auto px-6 md:px-12 relative z-10">
+            <div className="max-w-[1740px] mx-auto px-6 md:px-12 relative z-10">
                 <div className="relative w-full h-[500px] flex items-center justify-center">
 
-                    {/* TITLE - Rotated heavily in background */}
-                    <div className="absolute top-[3.3%] left-1/2 -translate-x-1/2 w-full text-center z-10 pointer-events-none mix-blend-multiply">
+                    {/* TITLE - Rotated heavily in background - Expanded width to prevent clipping */}
+                    <div className="absolute top-[15%] md:top-[3.3%] left-1/2 -translate-x-1/2 w-screen text-center z-10 pointer-events-none mix-blend-multiply flex justify-center">
                         <motion.h3
                             initial="hidden"
                             whileInView="visible"
@@ -69,7 +69,7 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                                     }
                                 }
                             }}
-                            className="text-[5rem] md:text-[4.38rem] font-black text-[#1e1e1e] tracking-evenly [word-spacing:20px] transform -rotate-6 whitespace-nowrap opacity-90"
+                            className="text-[3.2rem] md:text-[4.38rem] font-black text-[#1e1e1e] tracking-tight md:tracking-evenly [word-spacing:10px] md:[word-spacing:20px] transform -rotate-6 whitespace-nowrap opacity-90 text-center"
                             style={{ textShadow: '0px 10px 40px rgba(0,0,0,0.1)' }}>
                             {title.split("").map((char, index) => (
                                 <motion.span
@@ -108,9 +108,10 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="absolute right-[10%] top-[4%] w-[30%] aspect-[16/10] bg-white rounded-none shadow-xl transform -rotate-[6deg] z-10 overflow-hidden transition-all duration-300"
+                            className="hidden md:block absolute right-[10%] top-[4%] w-[30%] aspect-[16/10] bg-gray-900 rounded-none transform -rotate-[6deg] z-10 overflow-hidden transition-all duration-300"
+                            style={{ backfaceVisibility: 'hidden', transformStyle: 'preserve-3d' }}
                         >
-                            <img src={images[2]} alt="Project view 3" className="w-full h-full object-cover opacity-80" />
+                            <img src={images[2]} alt="Project view 3" className="w-full h-full object-cover opacity-100 brightness-100" />
                         </motion.div>
 
                         {/* 2. Middle Image (Center) - Second Image */}
@@ -120,9 +121,10 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="absolute left-[39%] top-[17%] w-[30%] aspect-[16/10] bg-white rounded-none shadow-xl transform -rotate-[6deg] z-20 overflow-hidden transition-all duration-300"
+                            className="hidden md:block absolute left-[39%] top-[17%] w-[30%] aspect-[16/10] bg-gray-900 rounded-none  transform -rotate-[6deg] z-20 overflow-hidden transition-all duration-300"
+                            style={{ backfaceVisibility: 'hidden', transformStyle: 'preserve-3d' }}
                         >
-                            <img src={images[1]} alt="Project view 2" className="w-full h-full object-cover" />
+                            <img src={images[1]} alt="Project view 2" className="w-full h-full object-cover opacity-100 brightness-100" />
                         </motion.div>
 
                         {/* 1. Front Image (Left-Bottom) - First Image */}
@@ -132,9 +134,10 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
-                            className="absolute left-[18%] top-[28%] w-[30%] aspect-[16/10] bg-gray-900 rounded-none shadow-xl transform -rotate-[6deg] z-30 overflow-hidden transition-all duration-300"
+                            className="absolute left-1/2 -translate-x-1/2 top-[20%] md:top-[28%] md:left-[18%] md:translate-x-0 w-[85%] md:w-[30%] aspect-[16/10] bg-gray-900 rounded-none transform -rotate-[6deg] z-30 overflow-hidden transition-all duration-300 shadow-2xl"
+                            style={{ backfaceVisibility: 'hidden', transformStyle: 'preserve-3d' }}
                         >
-                            <img src={images[0]} alt="Project view 1" className="w-full h-full object-cover" />
+                            <img src={images[0]} alt="Project view 1" className="w-full h-full object-cover opacity-100 brightness-100" />
                         </motion.div>
 
                     </div>
@@ -145,7 +148,7 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                         viewport={{ once: true }}
-                        className="absolute bottom-22 right-0 md:right-45 z-40 transform -rotate-6"
+                        className="absolute bottom-6 md:bottom-24 right-0 md:right-45 z-[60] transform -rotate-6 pointer-events-auto"
                     >
                         <div className="flex flex-col items-end gap-1">
                             <div className="flex items-center gap-2 mb-1">
@@ -156,7 +159,10 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                                 ))}
                             </div>
 
-                            <Link to={`/projects/${generateSlug(title)}`} className="group/btn flex items-center gap-2 text-[20px]  text-black">
+                            <Link
+                                to={`/projects/${generateSlug(title)}`}
+                                className="group/btn flex items-center gap-3 text-[22px] text-black hover:text-[#9333ea] transition-colors duration-300 p-2 -m-2 cursor-pointer pointer-events-auto"
+                            >
                                 View Details
                                 <ArrowRight className="w-8 h-8 transition-transform group-hover/btn:translate-x-2" />
                             </Link>

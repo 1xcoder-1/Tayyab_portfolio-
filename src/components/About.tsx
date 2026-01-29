@@ -10,13 +10,12 @@ const About = () => {
     return (
         <section
             ref={sectionRef}
-            className="relative w-full z-20"
+            className="relative w-full z-20 [clip-path:polygon(0_6vw,100%_0,100%_94%,0_100%)] md:[clip-path:polygon(0_14vw,100%_0,100%_85%,0_100%)]"
             id="about"
             style={{
                 marginTop: '-15vw',
                 paddingTop: '25vw',
                 paddingBottom: '12rem',
-                clipPath: 'polygon(0 15vw, 100% 0, 100% 85%, 0 100%)',
                 background: 'radial-gradient(91% 104% at 6.7% 3.4%, #352842 0%, #0D0219 100%)'
             }}
         >

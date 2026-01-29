@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { Smile, Briefcase, AtSign, X, Home, MessageSquare } from 'lucide-react';
+import { Smile, Star, AtSign, X, ExternalLink } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (location.pathname === '/projects/trucker-path-website') {
+            if (location.pathname === '/projects/notes-flow') {
                 setIsWhiteTheme(true);
                 return;
             }
@@ -104,46 +104,18 @@ const Navbar = () => {
 
     // Force white theme for specific pages
     useEffect(() => {
-        if (location.pathname === '/projects/trucker-path-website') {
+        if (location.pathname === '/projects/notes-flow') {
             setIsWhiteTheme(true);
         }
     }, [location.pathname]);
 
     const menuItems = [
-        ...(location.pathname === '/projects' ? [{ icon: <Home size={32} />, label: 'Home', href: '/' }] : []),
-        { icon: <Smile size={32} />, label: 'About', href: '/#about' },
-        { icon: <Briefcase size={32} />, label: 'Work', href: '/#projects' },
-        { icon: <MessageSquare size={32} />, label: 'Reviews', href: '/#testimonials' },
-        { icon: <AtSign size={32} />, label: 'Contact', href: '/#contact' },
+        { icon: <Smile size={28} strokeWidth={1.5} />, label: 'About', href: '/#about' },
+        { icon: <Star size={28} strokeWidth={1.5} />, label: 'Work', href: '/#projects' },
+        { icon: <AtSign size={28} strokeWidth={1.5} />, label: 'Contact', href: '/#contact' },
     ];
 
-    const menuVariants: Variants = {
-        closed: {
-            opacity: 0,
-            scale: 0.95,
-            transition: {
-                duration: 0.4,
-                ease: [0.16, 1, 0.3, 1],
-                staggerChildren: 0.1,
-                staggerDirection: -1
-            }
-        },
-        open: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 0.5,
-                ease: [0.16, 1, 0.3, 1],
-                staggerChildren: 0.1,
-                delayChildren: 0.2
-            }
-        }
-    };
 
-    const itemVariants: Variants = {
-        closed: { x: -20, opacity: 0 },
-        open: { x: 0, opacity: 1 }
-    };
 
     return (
         <>
@@ -185,12 +157,12 @@ const Navbar = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setIsOpen(true)}
-                        className="w-[44px] h-[44px] flex flex-col justify-center items-center cursor-pointer group transition-all"
+                        className={`w-[44px] h-[44px] flex flex-col justify-center items-center cursor-pointer shadow-sm transition-all duration-300 ${isWhiteTheme ? 'bg-[#1D1D1D]' : 'bg-white'}`}
                     >
-                        <div className="flex flex-col gap-1">
-                            <span className={`w-[20px] h-[2px] rounded-full group-hover:w-4 transition-all duration-300 ${isWhiteTheme ? 'bg-white' : 'bg-[#050a12]'}`}></span>
-                            <span className={`w-[20px] h-[2px] rounded-full transition-colors duration-300 ${isWhiteTheme ? 'bg-white' : 'bg-[#050a12]'}`}></span>
-                            <span className={`w-[20px] h-[2px] rounded-full group-hover:w-4 transition-all duration-300 ml-auto ${isWhiteTheme ? 'bg-white' : 'bg-[#050a12]'}`}></span>
+                        <div className="flex flex-col gap-[4px]">
+                            <span className={`w-[20px] h-[2px] rounded-[1px] transition-colors duration-300 ${isWhiteTheme ? 'bg-white' : 'bg-[#050a12]'}`}></span>
+                            <span className={`w-[20px] h-[2px] rounded-[1px] transition-colors duration-300 ${isWhiteTheme ? 'bg-white' : 'bg-[#050a12]'}`}></span>
+                            <span className={`w-[20px] h-[2px] rounded-[1px] transition-colors duration-300 ${isWhiteTheme ? 'bg-white' : 'bg-[#050a12]'}`}></span>
                         </div>
                     </motion.div>
                 </div>
@@ -198,66 +170,66 @@ const Navbar = () => {
 
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
-                        initial="closed"
-                        animate="open"
-                        exit="closed"
-                        variants={menuVariants}
-                        className="fixed inset-0 z-[2000] bg-white/60 backdrop-blur-[40px] flex flex-col items-center justify-center"
-                    >
-
-                        <motion.button
-                            onClick={() => setIsOpen(false)}
-                            whileHover={{ scale: 1.1, rotate: 90 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="absolute top-6 right-6 lg:top-10 lg:right-12 w-12 h-12 flex items-center justify-center rounded-full bg-black/5 hover:bg-black/10 transition-colors"
-                        >
-                            <X size={24} className="text-[#050a12]" />
-                        </motion.button>
-
-                        <div className="flex flex-col gap-12 items-start max-w-sm w-full border-l border-black/5 pl-12 -ml-6">
-                            {menuItems.map((item, index) => (
-                                <Link
-                                    key={index}
-                                    to={item.href}
-                                    onClick={(e) => handleLinkClick(e, item.href)}
-                                    className="block w-full"
-                                >
-                                    <motion.div
-                                        variants={itemVariants}
-                                        className="flex items-center gap-8 group cursor-pointer w-full"
-                                    >
-                                        <div className="text-[#050a12] group-hover:scale-110 transition-transform duration-300">
-                                            {item.icon}
-                                        </div>
-                                        <span className="text-4xl lg:text-6xl font-semibold text-[#050a12] group-hover:translate-x-4 transition-all duration-300 tracking-tight leading-none">
-                                            {item.label}
-                                        </span>
-                                    </motion.div>
-                                </Link>
-                            ))}
-                        </div>
-
+                    <>
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6 }}
-                            className="absolute bottom-12 flex gap-8 text-[14px] font-medium text-black/40"
-                        >
-                            <a href="#" className="relative group hover:text-[#050a12] transition-colors py-1">
-                                Twitter
-                                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#050a12] transition-all duration-300 group-hover:w-full" />
-                            </a>
-                            <a href="#" className="relative group hover:text-[#050a12] transition-colors py-1">
-                                LinkedIn
-                                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#050a12] transition-all duration-300 group-hover:w-full" />
-                            </a>
-                            <a href="#" className="relative group hover:text-[#050a12] transition-colors py-1">
-                                Dribbble
-                                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#050a12] transition-all duration-300 group-hover:w-full" />
-                            </a>
-                        </motion.div>
-                    </motion.div>
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsOpen(false)}
+                            className="fixed inset-0 z-[1500] bg-black/5 backdrop-blur-[2px]"
+                        />
+                        <div className="fixed top-2.5 right-6 lg:right-12 z-[2000] flex flex-col items-end gap-3">
+                            {/* Close Button - positioned exactly where hamburger was */}
+                            <motion.button
+                                onClick={() => setIsOpen(false)}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="w-[44px] h-[44px] flex items-center justify-center bg-white shadow-sm"
+                            >
+                                <X size={24} className="text-[#050a12]" />
+                            </motion.button>
+
+                            {/* Menu Box - floats below with a gap */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.8, y: -20, filter: 'blur(10px)' }}
+                                animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
+                                exit={{ opacity: 0, scale: 0.8, y: -20, filter: 'blur(10px)' }}
+                                transition={{
+                                    duration: 0.5,
+                                    ease: [0.23, 1, 0.32, 1],
+                                }}
+                                className="w-[280px] bg-white shadow-[0_30px_60px_rgba(0,0,0,0.12)] flex flex-col overflow-hidden origin-top-right border border-black/5"
+                            >
+                                <div className="flex flex-col gap-7 px-10 py-12">
+                                    {menuItems.map((item, index) => (
+                                        <motion.div
+                                            key={index}
+                                            initial={{ opacity: 0, y: 15 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{
+                                                delay: 0.05 * index + 0.1,
+                                                duration: 0.4,
+                                                ease: "easeOut"
+                                            }}
+                                        >
+                                            <Link
+                                                to={item.href}
+                                                onClick={(e) => handleLinkClick(e, item.href)}
+                                                className="flex items-center gap-6 group"
+                                            >
+                                                <div className="text-[#050a12] group-hover:scale-110 transition-transform duration-300">
+                                                    {item.icon}
+                                                </div>
+                                                <span className="text-[20px] font-semibold text-[#050a12] tracking-tight group-hover:translate-x-2 transition-transform duration-300">
+                                                    {item.label}
+                                                </span>
+                                            </Link>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        </div>
+                    </>
                 )}
             </AnimatePresence>
         </>
