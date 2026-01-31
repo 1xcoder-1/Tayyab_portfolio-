@@ -28,7 +28,7 @@ const Contact = () => {
                     className="w-full h-full"
                     style={{
                         background: 'radial-gradient(91% 104% at 6.7% 3.4%, #352842 0%, #0D0219 100%)',
-                        clipPath: 'polygon(100% 9%, 100% 100%, 0 100%, 0 100%)',
+                        clipPath: 'polygon(100% 20%, 100% 100%, 0 100%, 0 100%)',
                         opacity: 1
                     }}
                 />
@@ -54,7 +54,7 @@ const Contact = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="flex flex-col gap-2"
+                                className="hidden md:flex flex-col gap-2"
                             >
                                 <h2 className="text-6xl md:text-[5.5rem] font-semibold text-white leading-[0.95] tracking-wide transform -rotate-7 origin-left whitespace-nowrap">
                                     <span className="opacity-60">Let&apos;s bring</span> <span className="opacity-90">your vision to</span>
@@ -123,7 +123,7 @@ const Contact = () => {
                             whileInView={{ opacity: 1, scale: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, ease: "easeOut" }}
-                            className="relative h-[900px] w-[700px] flex items-end justify-center -mt-80 rotate-[-2deg]"
+                            className="relative h-[500px] md:h-[900px] w-full md:w-[700px] flex items-end justify-center -mt-[480px] md:-mt-80 -translate-y-27 translate-x-33 md:translate-y-0 md:translate-x-0 rotate-0 md:rotate-[-2deg]"
                         >
                             <motion.img
                                 src="https://framerusercontent.com/images/7fNQma73T88BJXYHotHpLQVe2tw.png?scale-down-to=1024&width=1184&height=864"

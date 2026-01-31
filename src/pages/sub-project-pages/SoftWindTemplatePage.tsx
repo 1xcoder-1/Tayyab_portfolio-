@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 
 import Contact from '../../components/Contact';
+import { wimg1, wimg2, wimg3 } from '../../Images/Water Tracker/index';
 
 const SoftWindTemplatePage = () => {
   const projectDetails = {
-    title: "Soft Wind Template",
+    title: "Water Tracker ",
     tags: ["Framer", "Template"],
     description: "SaaS Wind is tailor-made for SaaS companies and websites requiring a robust information architecture. Its minimalist and modern design style ensures your products and business are presented online with high quality, bringing you more leads.",
-    image: "https://framerusercontent.com/images/kkJ5ppCn4pWHkdkfo9veY9UMhR4.jpg",
+    image: wimg3,
     role: "Product Design, Strategy, Branding, No-Code",
     stack: "Framer, Figma, AE",
     duration: "4 weeks"
@@ -130,7 +131,7 @@ const SoftWindTemplatePage = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-5xl md:text-xl lg:text-[85px] font-bold tracking-wide text-white/80 mb-8 max-w-5xl leading-[0.9]"
+            className="text-4xl md:text-xl lg:text-[85px] font-bold tracking-wide text-white/80 mb-8 max-w-5xl leading-[0.9]"
             style={{ perspective: '1000px' }}
           >
             {projectDetails.title.split("").map((char, index) => (
@@ -257,7 +258,7 @@ const SoftWindTemplatePage = () => {
 
       {/* Design Showcase Sections */}
       {/* Design Showcase Sections */}
-      <div className="relative z-10 bg-[#121314] flex flex-col items-center gap-16 pb-16">
+      <div className="relative z-10 bg-[#121314] flex flex-col items-center gap-8 md:gap-16">
 
         {/* 1. Desktop Hero Showcase */}
         <motion.div
@@ -268,8 +269,8 @@ const SoftWindTemplatePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/yfbXfVaII5WvZ6BUS7aYjveGyvk.jpg"
-            className="w-full h-auto object-cover shadow-2xl"
+            src={wimg1}
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
@@ -282,9 +283,9 @@ const SoftWindTemplatePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/OSDt8lK6RXPzZP69uor3YNDilU.gif"
+            src={wimg2}
             alt="Analytics Dashboard"
-            className="w-full h-auto object-cover shadow-2xl"
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
@@ -297,14 +298,14 @@ const SoftWindTemplatePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/1nT83OnX9dN1ohgGyDYYhrm2U.jpg"
+            src={wimg3}
             alt="Logistics Warehouse"
-            className="w-full h-auto object-cover shadow-2xl"
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
         {/* 4. Mobile App Section */}
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -316,10 +317,10 @@ const SoftWindTemplatePage = () => {
             alt="Navigation Map"
             className="w-full h-auto object-cover shadow-2xl"
           />
-        </motion.div>
+        </motion.div> */}
 
         {/* 5. Mobile App Section */}
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -331,17 +332,13 @@ const SoftWindTemplatePage = () => {
             alt="Navigation Map"
             className="w-full h-auto object-cover shadow-2xl"
           />
-        </motion.div>
+        </motion.div> */}
 
       </div>
 
       {/* Other Works Section */}
       <div
-        className="relative z-10 w-full bg-[#121314] pt-10"
-        style={{
-          clipPath: 'polygon(0 0, 100% 0, 100% 82%, 0 100%)',
-          paddingBottom: '12rem'
-        }}
+        className="relative z-10 w-full bg-[#121314] pt-10 pb-28 md:pb-48 [clip-path:polygon(0_0,100%_0,100%_95%,0_100%)] md:[clip-path:polygon(0_0,100%_0,100%_82%,0_100%)]"
       >
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center justify-center mb-16">

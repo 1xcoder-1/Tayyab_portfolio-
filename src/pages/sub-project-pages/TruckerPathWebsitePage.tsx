@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 
 import Contact from '../../components/Contact';
+import { nimg1, nimg2, nimg3, nimg4 } from '../../Images/Notes Flow/index';
 
 const TruckerPathWebsitePage = () => {
   const projectDetails = {
-    title: "Trucker Path Website",
+    title: "Notes Flow",
     tags: ["Web Design", "Landing Page"],
     description: "Trucker Path is America's fastest growing truck-safe navigation, trip plan, and fuel saving tool for truckers.",
-    image: "https://framerusercontent.com/images/f56Ypn22t6pS8WVqfh1LgROeAdw.jpg",
+    image: nimg4,
     role: "UX/UI Design",
     stack: "Framer, Figma, Midjourney",
     duration: "8 weeks"
@@ -257,7 +258,7 @@ const TruckerPathWebsitePage = () => {
 
       {/* Design Showcase Sections */}
       {/* Design Showcase Sections */}
-      <div className="relative z-10 bg-[#121314] flex flex-col items-center gap-16 pb-16">
+      <div className="relative z-10 bg-[#121314] flex flex-col items-center gap-8 md:gap-16 pb-16">
 
         {/* 1. Desktop Hero Showcase */}
         <motion.div
@@ -268,9 +269,8 @@ const TruckerPathWebsitePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/lZIuPWPVIwJpHKOKIFa1aIdEkM0.jpeg?scale-down-to=2048&width=3840&height=2160"
-            alt="Truck on Highway"
-            className="w-full h-auto object-cover shadow-2xl"
+            src={nimg1}
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
@@ -283,9 +283,9 @@ const TruckerPathWebsitePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/JbmXUIwAhIX4AoKPxlOa9qOd8.jpg?scale-down-to=2048&width=3840&height=2160"
+            src={nimg2}
             alt="Analytics Dashboard"
-            className="w-full h-auto object-cover shadow-2xl"
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
@@ -298,9 +298,9 @@ const TruckerPathWebsitePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/45RB4RKwenH2YRUmCIKbv62x05w.jpg?scale-down-to=2048&width=3840&height=2160"
+            src={nimg3}
             alt="Logistics Warehouse"
-            className="w-full h-auto object-cover shadow-2xl"
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
@@ -313,9 +313,9 @@ const TruckerPathWebsitePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/vfXVIwg1boDco7Rm4TviJUEtXA.jpg?scale-down-to=2048&width=3840&height=2160"
+            src={nimg4}
             alt="Navigation Map"
-            className="w-full h-auto object-cover shadow-2xl"
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
@@ -323,11 +323,7 @@ const TruckerPathWebsitePage = () => {
 
       {/* Other Works Section */}
       <div
-        className="relative z-10 w-full bg-[#121314] pt-10"
-        style={{
-          clipPath: 'polygon(0 0, 100% 0, 100% 82%, 0 100%)',
-          paddingBottom: '12rem'
-        }}
+        className="relative z-10 w-full bg-[#121314] pt-10 pb-28 md:pb-48 [clip-path:polygon(0_0,100%_0,100%_95%,0_100%)] md:[clip-path:polygon(0_0,100%_0,100%_82%,0_100%)]"
       >
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center justify-center mb-16">
@@ -414,10 +410,10 @@ const TruckerPathWebsitePage = () => {
                   <h3 className="text-2xl font-[500] text-white">Trucker Path App</h3>
                   <div className="flex gap-2">
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      UI/UX Design
+                      Framer
                     </span>
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      B2C
+                      Template
                     </span>
                   </div>
                 </div>

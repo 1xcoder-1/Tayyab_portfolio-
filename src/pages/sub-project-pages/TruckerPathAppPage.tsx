@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 
 import Contact from '../../components/Contact';
+import { qimg1, qimg2, qimg3 } from '../../Images/Quran App/index';
 
 const TruckerPathAppPage = () => {
   const projectDetails = {
-    title: "Trucker Path App",
+    title: "Quran Reader App",
     tags: ["UI/UX Design", "B2C"],
     description: "Focus on improving the CTR of various scenario entrances and the final conversion rate of Fuel Purchase reservations.",
-    image: "https://framerusercontent.com/images/uLdyzLwa0zeiSrFZlT9rVUEr4U.jpg",
+    image: qimg3,
     role: "Product Design, Strategy, Branding, No-Code Development",
     stack: "Framer, Figma, Rive",
     duration: "4 weeks"
@@ -257,7 +258,7 @@ const TruckerPathAppPage = () => {
 
       {/* Design Showcase Sections */}
       {/* Design Showcase Sections */}
-      <div className="relative z-10 bg-[#121314] flex flex-col items-center gap-16 pb-16">
+      <div className="relative z-10 bg-[#121314] flex flex-col items-center gap-8 md:gap-16 pb-16">
 
         {/* 1. Desktop Hero Showcase */}
         <motion.div
@@ -268,8 +269,8 @@ const TruckerPathAppPage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/uLdyzLwa0zeiSrFZlT9rVUEr4U.jpg"
-            className="w-full h-auto object-cover shadow-2xl"
+            src={qimg1}
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
@@ -282,9 +283,9 @@ const TruckerPathAppPage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/kiBWFLyUMVZVWnwRBX3CnZcLIc.jpg"
+            src={qimg2}
             alt="Analytics Dashboard"
-            className="w-full h-auto object-cover shadow-2xl"
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
@@ -297,14 +298,14 @@ const TruckerPathAppPage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src="https://framerusercontent.com/images/KxPqw7Aibv1iFxLZGK2l2qRQLg8.png"
+            src={qimg3}
             alt="Logistics Warehouse"
-            className="w-full h-auto object-cover shadow-2xl"
+            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
 
         {/* 4. Mobile App Section */}
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -316,10 +317,10 @@ const TruckerPathAppPage = () => {
             alt="Navigation Map"
             className="w-full h-auto object-cover shadow-2xl"
           />
-        </motion.div>
+        </motion.div> */}
 
         {/* 5. Mobile App Section */}
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -331,17 +332,13 @@ const TruckerPathAppPage = () => {
             alt="Navigation Map"
             className="w-full h-auto object-cover shadow-2xl"
           />
-        </motion.div>
+        </motion.div> */}
 
       </div>
 
       {/* Other Works Section */}
       <div
-        className="relative z-10 w-full bg-[#121314] pt-10"
-        style={{
-          clipPath: 'polygon(0 0, 100% 0, 100% 82%, 0 100%)',
-          paddingBottom: '12rem'
-        }}
+        className="relative z-10 w-full bg-[#121314] pt-10 pb-28 md:pb-48 [clip-path:polygon(0_0,100%_0,100%_95%,0_100%)] md:[clip-path:polygon(0_0,100%_0,100%_82%,0_100%)]"
       >
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center justify-center mb-16">

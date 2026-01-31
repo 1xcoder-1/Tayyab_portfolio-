@@ -49,8 +49,8 @@ function App() {
         <Route path="/" element={<HomePage loading={loading} />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/notes-flow" element={<TruckerPathWebsitePage />} />
-        <Route path="/projects/soft-wind-template" element={<SoftWindTemplatePage />} />
-        <Route path="/projects/trucker-path-app" element={<TruckerPathAppPage />} />
+        <Route path="/projects/water-tracker" element={<SoftWindTemplatePage />} />
+        <Route path="/projects/quran-reader" element={<TruckerPathAppPage />} />
         <Route path="/projects/camhome-template" element={<CamhomeTemplatePage />} />
         <Route path="/projects/command-tms" element={<CommandTMSPage />} />
         <Route path="/projects/my-playground" element={<MyPlaygroundPage />} />

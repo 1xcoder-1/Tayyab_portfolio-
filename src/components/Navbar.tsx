@@ -43,7 +43,11 @@ const Navbar = () => {
                 setIsWhiteTheme(true);
                 return;
             }
-            if (location.pathname === '/projects/trucker-path-app') {
+            if (location.pathname === '/projects/water-tracker') {
+                setIsWhiteTheme(true);
+                return;
+            }
+            if (location.pathname === '/projects/quran-reader') {
                 setIsWhiteTheme(true);
                 return;
             }
