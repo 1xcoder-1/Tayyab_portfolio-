@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 
 import Contact from '../../components/Contact';
-import { nimg1, nimg2, nimg3, nimg4 } from '../../Images/Notes Flow/index';
+import { nimg1, nimg5, nimg3, nimg4, nimg6 } from '../../Images/Notes Flow/index';
 
 const TruckerPathWebsitePage = () => {
   const projectDetails = {
@@ -245,7 +245,7 @@ const TruckerPathWebsitePage = () => {
                       background: 'linear-gradient(161deg, #6d28d9 0%, #130321 47.75%, #6d28d9 100%)'
                     }}
                   >
-                    <span className="font-medium text-lg tracking-wide text-white group-hover:translate-x-1 transition-transform duration-300">Live Link</span>
+                    <span className="font-medium text-lg tracking-wide text-white group-hover:translate-x-1 transition-transform duration-300">View Case Study</span>
                     <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300 delay-75" />
                   </div>
                 </motion.a>
@@ -283,9 +283,9 @@ const TruckerPathWebsitePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src={nimg2}
+            src={nimg5}
             alt="Analytics Dashboard"
-            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
+            className="w-full object-cover shadow-2xl h-auto md:h-[2700px]"
           />
         </motion.div>
 
@@ -298,9 +298,9 @@ const TruckerPathWebsitePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src={nimg3}
+            src={nimg6}
             alt="Logistics Warehouse"
-            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
+            className="w-full object-cover shadow-2xl h-auto md:h-[2700px]"
           />
         </motion.div>
 

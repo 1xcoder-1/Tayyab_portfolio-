@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { Smile, Star, AtSign, X, ExternalLink } from 'lucide-react';
+import { motion, AnimatePresence, } from 'framer-motion';
+import { Smile, Star, AtSign, X } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -182,13 +182,13 @@ const Navbar = () => {
                             onClick={() => setIsOpen(false)}
                             className="fixed inset-0 z-[1500] bg-black/5 backdrop-blur-[2px]"
                         />
-                        <div className="fixed top-2.5 right-6 lg:right-12 z-[2000] flex flex-col items-end gap-3">
+                        <div className="fixed top-2.5 right-6 lg:right-12 z-[2000] flex flex-col items-end gap-3 pointer-events-none">
                             {/* Close Button - positioned exactly where hamburger was */}
                             <motion.button
                                 onClick={() => setIsOpen(false)}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="w-[44px] h-[44px] flex items-center justify-center bg-white shadow-sm"
+                                className="w-[44px] h-[44px] flex items-center justify-center bg-white shadow-sm relative z-50 pointer-events-auto"
                             >
                                 <X size={24} className="text-[#050a12]" />
                             </motion.button>
@@ -202,9 +202,9 @@ const Navbar = () => {
                                     duration: 0.5,
                                     ease: [0.23, 1, 0.32, 1],
                                 }}
-                                className="w-[280px] bg-white shadow-[0_30px_60px_rgba(0,0,0,0.12)] flex flex-col overflow-hidden origin-top-right border border-black/5"
+                                className="fixed inset-0 w-full h-full md:w-[280px] md:h-auto md:static bg-white/60 backdrop-blur-xl md:backdrop-blur-none md:bg-white md:shadow-[0_30px_60px_rgba(0,0,0,0.12)] flex flex-col overflow-hidden origin-top-right md:border border-black/5 z-40 pointer-events-auto"
                             >
-                                <div className="flex flex-col gap-7 px-10 py-12">
+                                <div className="flex flex-col gap-8 px-10 py-12 justify-center items-center h-full md:justify-start md:items-stretch md:h-auto">
                                     {menuItems.map((item, index) => (
                                         <motion.div
                                             key={index}
@@ -224,7 +224,7 @@ const Navbar = () => {
                                                 <div className="text-[#050a12] group-hover:scale-110 transition-transform duration-300">
                                                     {item.icon}
                                                 </div>
-                                                <span className="text-[20px] font-semibold text-[#050a12] tracking-tight group-hover:translate-x-2 transition-transform duration-300">
+                                                <span className="text-[32px] md:text-[20px] font-semibold text-[#050a12] tracking-tight group-hover:translate-x-2 transition-transform duration-300">
                                                     {item.label}
                                                 </span>
                                             </Link>
