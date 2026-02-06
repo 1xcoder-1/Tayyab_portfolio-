@@ -126,11 +126,12 @@ const AboutContent = () => {
                         transition={{ delayChildren: 0.4 }}
                     >
                         <p className="text-xl md:text-[22px] font-normal leading-relaxed text-gray-200">
-                            {"AN UX && UI Designer specializing in crafting Framer templates, Figma Design System, dashboards && High convert. Landing Page. Now at @Moatable Inc.".split("").map((char, index) => (
+                            {"UI/UX Designer with hands on experience, focused on clean, user centered digital products. Worked on freelance projects, including UI/UX for Javed Ahmed Ghamidi’s digital initiatives, gaining experience in research, user flows, and interface design.".split("").map((char, index) => (
                                 <motion.span
                                     key={index}
                                     variants={childVariants}
                                     style={{ display: 'inline-block', whiteSpace: char === " " ? "pre" : "normal" }}
+                                    className={char === " " ? "mr-1" : ""}
                                 >
                                     {char}
                                 </motion.span>
@@ -146,7 +147,7 @@ const AboutContent = () => {
                         transition={{ delayChildren: 0.5 }}
                     >
                         <p className="text-gray-500 text-base md:text-lg font-normal leading-relaxed max-w-3xl">
-                            {"Independent UX && UI architect with a focus on building Framer templates, Figma design systems, dashboards && web pages.".split("").map((char, index) => (
+                            {"I care about clarity, usability, and building interfaces that feel intuitive — not just visually appealing.".split("").map((char, index) => (
                                 <motion.span
                                     key={index}
                                     variants={childVariants}

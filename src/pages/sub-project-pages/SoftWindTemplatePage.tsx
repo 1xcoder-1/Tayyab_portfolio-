@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 
 import Contact from '../../components/Contact';
-import { wimg1, wimg2, wimg3 } from '../../Images/Water Tracker/index';
+import { wimg1, wimg2, wimg4, wimg5 } from '../../Images/Water Tracker/index';
+import { nimg1, nimg2 } from '../../Images/Notes Flow/index';
+import { qimg3 } from '../../Images/Quran App/index';
 
 const SoftWindTemplatePage = () => {
   const projectDetails = {
     title: "Water Tracker ",
-    tags: ["Framer", "Template"],
+    tags: ["IOS App", "Mobile App"],
     description: "SaaS Wind is tailor-made for SaaS companies and websites requiring a robust information architecture. Its minimalist and modern design style ensures your products and business are presented online with high quality, bringing you more leads.",
-    image: wimg3,
+    image: wimg1,
     role: "Product Design, Strategy, Branding, No-Code",
     stack: "Framer, Figma, AE",
     duration: "4 weeks"
@@ -245,7 +247,7 @@ const SoftWindTemplatePage = () => {
                       background: 'linear-gradient(161deg, #6d28d9 0%, #130321 47.75%, #6d28d9 100%)'
                     }}
                   >
-                    <span className="font-medium text-lg tracking-wide text-white group-hover:translate-x-1 transition-transform duration-300">Live Link</span>
+                    <span className="font-medium text-lg tracking-wide text-white group-hover:translate-x-1 transition-transform duration-300">View Case Study</span>
                     <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300 delay-75" />
                   </div>
                 </motion.a>
@@ -269,7 +271,7 @@ const SoftWindTemplatePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src={wimg1}
+            src={wimg2}
             className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
           />
         </motion.div>
@@ -283,9 +285,9 @@ const SoftWindTemplatePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src={wimg2}
+            src={wimg4}
             alt="Analytics Dashboard"
-            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
+            className="w-full object-cover shadow-2xl h-auto md:h-[2700px]"
           />
         </motion.div>
 
@@ -298,41 +300,13 @@ const SoftWindTemplatePage = () => {
           className="w-full max-w-[1200px] px-6"
         >
           <img
-            src={wimg3}
+            src={wimg5}
             alt="Logistics Warehouse"
-            className="w-full object-cover shadow-2xl h-[240px] md:h-[690px]"
+            className="w-full object-cover shadow-2xl h-auto md:h-[2700px]"
           />
         </motion.div>
 
-        {/* 4. Mobile App Section */}
-        {/* <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={imageRevealVariants}
-          className="w-full max-w-[1200px] px-6"
-        >
-          <img
-            src="https://framerusercontent.com/images/NcBaP9dutnmOJ6g68UosYx0rf8.jpg"
-            alt="Navigation Map"
-            className="w-full h-auto object-cover shadow-2xl"
-          />
-        </motion.div> */}
 
-        {/* 5. Mobile App Section */}
-        {/* <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={imageRevealVariants}
-          className="w-full max-w-[1200px] px-6"
-        >
-          <img
-            src="https://framerusercontent.com/images/iyG0pBn7c2xUKsi5EUVtrZ6Tuho.jpg"
-            alt="Navigation Map"
-            className="w-full h-auto object-cover shadow-2xl"
-          />
-        </motion.div> */}
 
       </div>
 
@@ -379,26 +353,26 @@ const SoftWindTemplatePage = () => {
                 <div className="overflow-hidden aspect-[16/10] mb-6 relative">
                   {/* Hover Image */}
                   <img
-                    src="https://framerusercontent.com/images/lZIuPWPVIwJpHKOKIFa1aIdEkM0.jpeg?scale-down-to=2048&width=3840&height=2160"
+                    src={nimg2}
                     alt="Soft Wind Template Hover"
                     className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
                   {/* Default Image */}
                   <img
-                    src="https://framerusercontent.com/images/f56Ypn22t6pS8WVqfh1LgROeAdw.jpg?scale-down-to=2048&width=3840&height=2880"
+                    src={nimg1}
                     alt="Soft Wind Template"
                     className="relative z-10 w-full h-full object-cover opacity-80 group-hover:opacity-0 group-hover:scale-105 transition-all duration-500"
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-[500] text-white">Trucker Path Website </h3>
+                  <h3 className="text-2xl font-[500] text-white">Notes Flow App </h3>
                   <div className="flex gap-2">
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      Web Design
+                      UI/UX Design
                     </span>
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      Landing Page
+                      Mobile App
                     </span>
                   </div>
                 </div>
@@ -415,20 +389,20 @@ const SoftWindTemplatePage = () => {
               <Link to="/projects/trucker-path-app" className="group block">
                 <div className="overflow-hidden aspect-[16/10] mb-6">
                   <img
-                    src="https://framerusercontent.com/images/uLdyzLwa0zeiSrFZlT9rVUEr4U.jpg?scale-down-to=1024&width=2880&height=1920"
+                    src={qimg3}
                     alt="Trucker Path App"
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-[500] text-white">Trucker Path App</h3>
+                  <h3 className="text-2xl font-[500] text-white">Quran Reader App</h3>
                   <div className="flex gap-2">
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      UI/UX Design
+                      iOS App
                     </span>
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      B2C
+                      Mobile App
                     </span>
                   </div>
                 </div>

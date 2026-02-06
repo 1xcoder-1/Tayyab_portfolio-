@@ -90,16 +90,16 @@ const Contact = () => {
 
                                 {/* Social Icons */}
                                 <div className="flex items-center gap-6 mt-2">
-                                    <a href="#" className="text-white hover:opacity-80 transition-opacity">
+                                    <a href="https://www.linkedin.com/in/muhammad-tayyab-838a2939b?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="text-white hover:opacity-80 transition-opacity">
                                         <Linkedin size={28} strokeWidth={1.5} />
                                     </a>
-                                    <a href="#" className="text-white hover:opacity-80 transition-opacity">
+                                    <a href="https://www.instagram.com/design.tayyab?igsh=MTQ0YW95MXFsMDV5" className="text-white hover:opacity-80 transition-opacity">
                                         <Instagram size={28} strokeWidth={1.5} />
                                     </a>
-                                    <a href="#" className="text-white hover:opacity-80 transition-opacity">
+                                    <a href="https://wa.me/+923081603939" className="text-white hover:opacity-80 transition-opacity">
                                         <WhatsAppIcon />
                                     </a>
-                                    <a href="#" className="text-white text-2xl font-bold hover:opacity-80 transition-opacity">
+                                    <a href="https://www.behance.net/tayyabshabbir16" className="text-white text-2xl font-bold hover:opacity-80 transition-opacity">
                                         Bē
                                     </a>
                                 </div>

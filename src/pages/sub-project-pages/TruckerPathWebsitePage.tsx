@@ -5,11 +5,14 @@ import Navbar from '../../components/Navbar';
 
 import Contact from '../../components/Contact';
 import { nimg1, nimg5, nimg3, nimg4, nimg6 } from '../../Images/Notes Flow/index';
+import { qimg1, qimg3 } from '../../Images/Quran App/index';
+import { wimg1 } from '../../Images/Water Tracker/index';
+
 
 const TruckerPathWebsitePage = () => {
   const projectDetails = {
     title: "Notes Flow",
-    tags: ["Web Design", "Landing Page"],
+    tags: ["IOS App", "Mobile App"],
     description: "Trucker Path is America's fastest growing truck-safe navigation, trip plan, and fuel saving tool for truckers.",
     image: nimg4,
     role: "UX/UI Design",
@@ -364,26 +367,26 @@ const TruckerPathWebsitePage = () => {
                 <div className="overflow-hidden aspect-[16/10] mb-6 relative">
                   {/* Hover Image */}
                   <img
-                    src="https://framerusercontent.com/images/yfbXfVaII5WvZ6BUS7aYjveGyvk.jpg?scale-down-to=2048&width=2881&height=1900"
+                    src={qimg3}
                     alt="Soft Wind Template Hover"
                     className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
                   {/* Default Image */}
                   <img
-                    src="https://framerusercontent.com/images/kkJ5ppCn4pWHkdkfo9veY9UMhR4.jpg?scale-down-to=1024&width=2880&height=1900"
+                    src={qimg1}
                     alt="Soft Wind Template"
                     className="relative z-10 w-full h-full object-cover opacity-80 group-hover:opacity-0 group-hover:scale-105 transition-all duration-500"
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-[500] text-white">Soft Wind Template</h3>
+                  <h3 className="text-2xl font-[500] text-white">Quran Reader App</h3>
                   <div className="flex gap-2">
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      Framer
+                      iOS App
                     </span>
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      Template
+                      Mobile App
                     </span>
                   </div>
                 </div>
@@ -400,20 +403,20 @@ const TruckerPathWebsitePage = () => {
               <Link to="/projects/trucker-path-app" className="group block">
                 <div className="overflow-hidden aspect-[16/10] mb-6">
                   <img
-                    src="https://framerusercontent.com/images/uLdyzLwa0zeiSrFZlT9rVUEr4U.jpg?scale-down-to=1024&width=2880&height=1920"
+                    src={wimg1}
                     alt="Trucker Path App"
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-[500] text-white">Trucker Path App</h3>
+                  <h3 className="text-2xl font-[500] text-white">Water Tracker App</h3>
                   <div className="flex gap-2">
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      Framer
+                      IOS App
                     </span>
                     <span className="px-4 py-1.5 rounded-full bg-[#1A1D21] text-[#888888] text-sm font-medium border border-white/5 transition-all duration-300 group-hover:bg-[#25282C] group-hover:text-gray-200 group-hover:border-white/20 group-hover:shadow-[0_0_15px_-3px_rgba(255,255,255,0.15)]">
-                      Template
+                      Mobile App
                     </span>
                   </div>
                 </div>

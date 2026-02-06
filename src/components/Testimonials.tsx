@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView, useScroll, useTransform, type Variants } from 'framer-motion';
 import { Hexagon } from 'lucide-react';
+import { cimg1, cimg2, cimg3 } from '../Images/Clients Reviews/index';
 
 const testimonialsData = [
     {
         id: 1,
-        name: "Emily Parker",
-        role: "Senior Product Manager",
+        name: "Malik Siam",
+        role: "Ceo of Innvoy Global",
         quote: (
             <>
-                Boyce's imagination always brings fresh ideas that push creative boundaries.
+                Tayyab’s UI/UX work goes beyond visuals, focusing on user behavior to significantly improve our product's usability and clarity.
             </>
         ),
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+        image: cimg1,
         gradient: "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)", // Blue
         logoColor: "text-blue-100",
         className: "z-10",
@@ -20,14 +21,14 @@ const testimonialsData = [
     },
     {
         id: 2,
-        name: "Olivia Johnson",
-        role: "Front-End Developer",
+        name: "Javed Ahmed Ghamidi",
+        role: "Islamic Scholar",
         quote: (
             <>
-                Quickly understands complex ideas and makes collaboration easy with clear communication.
+                Tayyab’s designs simplify complex content through clarity and intuitive navigation.
             </>
         ),
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+        image: cimg2,
         gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)", // Emerald/Green
         logoColor: "text-emerald-100",
         className: "z-20",
@@ -35,14 +36,14 @@ const testimonialsData = [
     },
     {
         id: 3,
-        name: "James Carter",
-        role: "Back-End Developer",
+        name: "Muhammad Musab",
+        role: "Agency Owner",
         quote: (
             <>
-                Creative, technically skilled, and always a step ahead—Boyce is a great problem-solver.
+                Tayyab quickly translates requirements into clean, practical interfaces that prioritize user flow and clarity.
             </>
         ),
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+        image: cimg3,
         gradient: "linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)", // Purple
         logoColor: "text-purple-100",
         className: "z-30",
