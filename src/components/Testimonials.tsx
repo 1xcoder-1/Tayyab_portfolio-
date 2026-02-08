@@ -63,9 +63,8 @@ const Testimonials = () => {
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    // Animation Controls used for Heading
     const controls = useAnimation();
-    const sectionRef = useRef(null); // Ref for scrolling container
+    const sectionRef = useRef(null);
     const headingRef = useRef(null);
     const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
@@ -75,15 +74,12 @@ const Testimonials = () => {
         offset: ["start start", "end end"]
     });
 
-    // Transforms for Cards
-    // Card 1: Static
-    // Card 2: Enters from left with tilt and zoom out
+
     const card2X = useTransform(scrollYProgress, [0.15, 0.5], ["-80vw", "0%"]);
     const card2Rotate = useTransform(scrollYProgress, [0.15, 0.5], [-20, 0]);
     const card2Scale = useTransform(scrollYProgress, [0.15, 0.5], [1.1, 1]);
     const card2Opacity = useTransform(scrollYProgress, [0.15, 0.25], [0, 1]);
 
-    // Card 3: Enters from left with tilt and zoom out
     const card3X = useTransform(scrollYProgress, [0.45, 0.8], ["-80vw", "0%"]);
     const card3Rotate = useTransform(scrollYProgress, [0.45, 0.8], [-20, 0]);
     const card3Scale = useTransform(scrollYProgress, [0.45, 0.8], [1.1, 1]);
@@ -150,7 +146,7 @@ const Testimonials = () => {
             id="testimonials"
             className="relative w-full z-20 mt-[-13vw] md:mt-[-8vw] [clip-path:polygon(0_12vw,100%_0,100%_96%,0%_100%)] md:[clip-path:polygon(0_13vw,100%_2%,100%_92%,0%_100%)]"
             style={{
-                height: isMobile ? 'auto' : '200vh', // Auto height for mobile stack
+                height: isMobile ? 'auto' : '200vh',
                 paddingTop: '0',
                 background: 'radial-gradient(91% 104% at 6.7% 3.4%, #352842 0%, #0D0219 100%)'
             }}
@@ -158,7 +154,6 @@ const Testimonials = () => {
             <div className={`w-full flex flex-col items-center justify-center pt-[10vh] md:pt-[15vh] ${isMobile ? 'relative pb-24' : 'sticky top-0 h-screen overflow-hidden'}`}>
                 <div className="max-w-[1240px] w-full mx-auto px-6 md:px-12 relative z-10">
 
-                    {/* Heading */}
                     <div ref={headingRef} className="relative mb-8 md:mb-16 inline-block">
                         <motion.h2
                             variants={containerVariants}
@@ -189,18 +184,15 @@ const Testimonials = () => {
                                 ))}
                             </span>
                         </motion.h2>
-                        {/* Purple Accent Line matching the about section */}
                         <div className="absolute top-[18%] md:top-[33%] left-[-1%] w-[60px] md:w-[80px] h-[6px] md:h-[7px] bg-[#A855F7] transform -rotate-8 z-40 mix-blend-normal" />
                     </div>
 
-                    {/* Testimonial Cards Container */}
                     <div className={`relative w-full flex ${isMobile ? 'flex-col gap-6' : 'h-[400px] items-center justify-center md:justify-start'} md:mt-8`}>
 
                         {testimonialsData.map((item, index) => {
-                            // Dynamic positioning styles
+
                             let style = {};
                             if (isMobile) {
-                                // Force visibility on mobile to override any previous animation states
                                 style = {
                                     opacity: 1,
                                     x: 0,
@@ -212,11 +204,11 @@ const Testimonials = () => {
                                 };
                             } else {
                                 if (index === 0) {
-                                    style = { x: 0, y: 0, zIndex: 10, scale: 1 }; // Back card, static position, opacity handled by variants
+                                    style = { x: 0, y: 0, zIndex: 10, scale: 1 };
                                 } else if (index === 1) {
-                                    style = { x: card2X, rotate: card2Rotate, scale: card2Scale, y: -60, opacity: card2Opacity, left: '30%', zIndex: 20 }; // Middle overlapping, tighter
+                                    style = { x: card2X, rotate: card2Rotate, scale: card2Scale, y: -60, opacity: card2Opacity, left: '30%', zIndex: 20 };
                                 } else if (index === 2) {
-                                    style = { x: card3X, rotate: card3Rotate, scale: card3Scale, y: -120, opacity: card3Opacity, left: '57%', zIndex: 30 }; // Top overlapping, tighter
+                                    style = { x: card3X, rotate: card3Rotate, scale: card3Scale, y: -120, opacity: card3Opacity, left: '57%', zIndex: 30 };
                                 }
                             }
 
@@ -229,10 +221,8 @@ const Testimonials = () => {
                                     animate={isMobile ? { opacity: 1, y: 0, filter: 'blur(0px)' } : (index === 0 ? controls : undefined)}
                                     className={`${isMobile ? 'relative w-full' : 'absolute w-full max-w-[500px]'} shadow-2xl group ${item.className}`}
                                 >
-                                    {/* Card Content (Height Decreased, No Radius) */}
                                     <div className="h-[310px] w-full flex flex-col relative bg-[#1e293b]">
 
-                                        {/* Colored Gradient Header */}
                                         <div className="absolute top-0 left-0 right-0 h-[75%] z-0"
                                             style={{
                                                 background: item.gradient,
@@ -240,10 +230,8 @@ const Testimonials = () => {
                                             }}
                                         />
 
-                                        {/* Content */}
                                         <div className="relative z-10 h-full flex flex-col justify-between p-8 text-white">
 
-                                            {/* Top: Logo & Quote */}
                                             <div>
                                                 <div className={`flex items-center gap-2 mb-6 ${item.logoColor}`}>
                                                     <Hexagon className="w-6 h-6 fill-current" />
@@ -255,7 +243,6 @@ const Testimonials = () => {
                                                 </p>
                                             </div>
 
-                                            {/* Bottom: Profile */}
                                             <div className="flex items-center gap-4 mt-auto">
                                                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white/20">
                                                     <img

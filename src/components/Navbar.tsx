@@ -60,7 +60,6 @@ const Navbar = () => {
 
             let isWhite = false;
 
-            // Handle Projects Page Header
             if (projectsHeader) {
                 const headerRect = projectsHeader.getBoundingClientRect();
                 if (headerRect.top <= 32 && headerRect.bottom >= 32) {
@@ -68,7 +67,6 @@ const Navbar = () => {
                 }
             }
 
-            // Handle Home Page Sections
             if (aboutSection) {
                 const aboutRect = aboutSection.getBoundingClientRect();
                 const projectsRect = projectsSection?.getBoundingClientRect();
@@ -76,7 +74,6 @@ const Navbar = () => {
                 const visualBottom = aboutRect.bottom - (aboutRect.height * 0.15);
                 let isInsideAbout = aboutRect.top <= 32 && visualBottom >= 32;
 
-                // Explicit safety override: If Projects section has physically reached the navbar center, FORCE BLACK
                 if (projectsRect && projectsRect.top <= 32) {
                     isInsideAbout = false;
                 }
@@ -84,7 +81,6 @@ const Navbar = () => {
                 if (isInsideAbout) isWhite = true;
             }
 
-            // Testimonials (shared check)
             if (testimonialsSection) {
                 const testimonialsRect = testimonialsSection.getBoundingClientRect();
                 if (testimonialsRect.top <= 32 && testimonialsRect.bottom >= 32) {
@@ -96,7 +92,6 @@ const Navbar = () => {
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        // Run multiple times to catch dynamic content loading
         handleScroll();
         const timer = setTimeout(handleScroll, 100);
 
@@ -106,7 +101,6 @@ const Navbar = () => {
         };
     }, [location.pathname]);
 
-    // Force white theme for specific pages
     useEffect(() => {
         if (location.pathname === '/projects/notes-flow') {
             setIsWhiteTheme(true);
@@ -193,7 +187,6 @@ const Navbar = () => {
                                 <X size={24} className="text-[#050a12]" />
                             </motion.button>
 
-                            {/* Menu Box - floats below with a gap */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8, y: -20, filter: 'blur(10px)' }}
                                 animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}

@@ -51,7 +51,7 @@ function App() {
         <Route path="/projects/notes-flow" element={<TruckerPathWebsitePage />} />
         <Route path="/projects/water-tracker" element={<SoftWindTemplatePage />} />
         <Route path="/projects/quran-reader" element={<TruckerPathAppPage />} />
-        <Route path="/projects/camhome-template" element={<CamhomeTemplatePage />} />
+        <Route path="/projects/camhome" element={<CamhomeTemplatePage />} />
         <Route path="/projects/command-tms" element={<CommandTMSPage />} />
         <Route path="/projects/my-playground" element={<MyPlaygroundPage />} />
       </Routes>

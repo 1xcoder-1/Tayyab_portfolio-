@@ -31,20 +31,14 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
 
     return (
         <div className="relative w-full py-0 md:py-4 group overflow-hidden">
-
-            {/* Background Stripes - Split Design - NO ANIMATION */}
             <div className="absolute inset-0 z-0 pointer-events-none">
-                {/* 1. Upper Half (Darkest) */}
                 <div
                     className={`absolute left-0 right-0 h-[110px] top-1/2 -translate-y-full bg-[#A855F7] origin-left transform -skew-y-6 transition-transform duration-500`}
                 />
 
-                {/* 2. Lower Half (Medium) */}
                 <div
                     className={`absolute left-0 right-0 h-[110px] top-1/2 bg-[#A855F7] opacity-60 origin-left transform -skew-y-6 transition-transform duration-500`}
                 />
-
-                {/* 3. Bottom Stripe (Lightest) */}
                 <div
                     className={`absolute left-0 right-0 h-[30px] top-[calc(45%+148px)] bg-[#A855F7] opacity-10 origin-left transform -skew-y-6 transition-transform duration-500`}
                 />
@@ -53,7 +47,6 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
             <div className="max-w-[1740px] mx-auto px-6 md:px-12 relative z-10">
                 <div className="relative w-full h-[500px] flex items-center justify-center">
 
-                    {/* TITLE - Rotated heavily in background - Expanded width to prevent clipping */}
                     <div className="absolute top-[15%] md:top-[3.3%] left-1/2 -translate-x-1/2 w-screen text-center z-10 pointer-events-none mix-blend-multiply flex justify-center">
                         <motion.h3
                             initial="hidden"
@@ -98,10 +91,8 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                         </motion.h3>
                     </div>
 
-                    {/* IMAGES Cluster */}
                     <div className="relative w-full max-w-[1000px] h-[400px] z-20 mt-12 mx-auto">
 
-                        {/* 3. Back Image (Right-Top) - Third Image */}
                         <motion.div
                             custom={2}
                             variants={imageVariants}
@@ -114,7 +105,6 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                             <img src={images[2]} alt="Project view 3" className="w-full h-full object-cover opacity-100 brightness-100" />
                         </motion.div>
 
-                        {/* 2. Middle Image (Center) - Second Image */}
                         <motion.div
                             custom={1}
                             variants={imageVariants}
@@ -127,7 +117,6 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
                             <img src={images[1]} alt="Project view 2" className="w-full h-full object-cover opacity-100 brightness-100" />
                         </motion.div>
 
-                        {/* 1. Front Image (Left-Bottom) - First Image */}
                         <motion.div
                             custom={0}
                             variants={imageVariants}
@@ -142,7 +131,6 @@ const ProjectItem = ({ title, images, tags }: ProjectItemProps) => {
 
                     </div>
 
-                    {/* Details - Bottom Right Floating */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}

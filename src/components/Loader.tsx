@@ -6,7 +6,7 @@ const Loader = () => {
     <motion.div
       className="fixed inset-0 z-[9999] flex items-center justify-center"
       style={{
-        background: 'linear-gradient(to bottom right, #ffffff, #f0f7ff)' // Light white + subtle blue mix
+        background: 'linear-gradient(to bottom right, #ffffff, #f0f7ff)'
       }}
       initial={{ opacity: 1 }}
       exit={{

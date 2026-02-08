@@ -15,14 +15,9 @@ const Contact = () => {
 
     return (
         <section className="relative w-full bg-white overflow-hidden" id="contact">
-
-            {/* Purple Slanted Banner - Two-tone effect */}
-            {/* Top half - Full purple */}
             <div className="absolute top-[25%] left-0 right-0 h-[20vh] bg-[#A855F7] transform -skew-y-7 origin-top-left z-10" />
-            {/* Bottom half - Lighter purple */}
             <div className="absolute top-[calc(25%+20vh)] left-0 right-0 h-[20vh] bg-[#CB99FA] transform -skew-y-7 origin-top-left z-10" />
 
-            {/* Topmost Decorative Background Line - Bottom Right */}
             <div className="absolute bottom-[0%] right-[-5%] w-[950px] h-[180px] z-50 pointer-events-none overflow-hidden">
                 <div
                     className="w-full h-full"
@@ -34,7 +29,6 @@ const Contact = () => {
                 />
             </div>
 
-            {/* Scroll to Top Arrow */}
             <button
                 onClick={scrollToTop}
                 className="absolute bottom-9 md:bottom-9 right-5 md:right-12 z-[60] p-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full text-white transition-all duration-300 backdrop-blur-md group"
@@ -42,12 +36,10 @@ const Contact = () => {
             >
                 <ArrowUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform duration-300" />
             </button>
-            {/* Main Content Container */}
             <div className="relative z-20 h-auto flex items-center">
                 <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 pt-20 pb-0">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-                        {/* Left Content */}
                         <div className="flex flex-col gap-14 pt-24 pb-20">
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
@@ -71,7 +63,6 @@ const Contact = () => {
                                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                                 className="flex flex-col gap-6 items-start mt-[-16px] ml-6 transform -rotate-7 origin-left"
                             >
-                                {/* Contact Button - matching Get Resume style */}
                                 <a
                                     href="#"
                                     className="relative group inline-block p-[1.5px] overflow-hidden"
@@ -88,7 +79,6 @@ const Contact = () => {
                                     </div>
                                 </a>
 
-                                {/* Social Icons */}
                                 <div className="flex items-center gap-6 mt-2">
                                     <a href="https://www.linkedin.com/in/muhammad-tayyab-838a2939b?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="text-white hover:opacity-80 transition-opacity">
                                         <Linkedin size={28} strokeWidth={1.5} />
@@ -105,7 +95,6 @@ const Contact = () => {
                                 </div>
                             </motion.div>
 
-                            {/* Copyright Text */}
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}

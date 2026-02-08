@@ -98,7 +98,6 @@ const SoftWindTemplatePage = () => {
         </Link>
       </motion.div>
 
-      {/* Background Gradients/Glows */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-[-10%] left-[20%] w-[40vw] h-[40vw] bg-[#00FF94]/5 blur-[120px] rounded-full mix-blend-screen" />
         <div className="absolute top-[10%] right-[0%] w-[30vw] h-[30vw] bg-[#0066FF]/10 blur-[100px] rounded-full mix-blend-screen" />
@@ -106,7 +105,6 @@ const SoftWindTemplatePage = () => {
       </div>
 
       <div className="relative w-full h-[77vh]">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <motion.div
             initial={{ scale: 1.1, opacity: 0 }}
@@ -120,20 +118,16 @@ const SoftWindTemplatePage = () => {
               className="w-full h-full object-cover"
             />
           </motion.div>
-          {/* Gradient Overlays */}
           <div className="absolute inset-0 bg-black/30" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#121314] via-transparent to-transparent opacity-90" />
-          {/* Bottom Blur Effect */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#121314] to-transparent backdrop-blur-[2px]" />
         </div>
-
-        {/* Content Overlay - Heading */}
         <div className="relative z-10 h-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col justify-end pb-20">
           <motion.h1
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-4xl md:text-xl lg:text-[85px] font-bold tracking-wide text-white/80 mb-8 max-w-5xl leading-[0.9]"
+            className="text-4xl md:text-7xl lg:text-[85px] font-bold tracking-wide text-white/80 mb-8 max-w-7xl leading-[1.1]"
             style={{ perspective: '1000px' }}
           >
             {projectDetails.title.split("").map((char, index) => (
@@ -149,13 +143,10 @@ const SoftWindTemplatePage = () => {
         </div>
       </div>
 
-      {/* Content Section */}
       <div className="relative z-10 w-full bg-[#121314] -mt-10 pb-20">
         <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
-          {/* Grid Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-16 lg:gap-x-12">
 
-            {/* Left Details Column */}
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -203,7 +194,6 @@ const SoftWindTemplatePage = () => {
               </div>
             </motion.div>
 
-            {/* Right Content Column */}
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -211,7 +201,6 @@ const SoftWindTemplatePage = () => {
               viewport={{ once: true }}
               className="lg:col-span-8 space-y-8 lg:pl-30"
             >
-              {/* Tags */}
               <motion.div variants={containerVariants} className="flex flex-wrap gap-3">
                 {projectDetails.tags.map(tag => (
                   <motion.span key={tag} variants={childVariants} className="px-5 py-1.5 rounded-full bg-[#1A1D21] text-gray-300 text-sm font-medium border border-white/5 hover:bg-[#25282C] transition-colors cursor-default">
@@ -258,11 +247,8 @@ const SoftWindTemplatePage = () => {
         </div>
       </div>
 
-      {/* Design Showcase Sections */}
-      {/* Design Showcase Sections */}
       <div className="relative z-10 bg-[#121314] flex flex-col items-center gap-8 md:gap-16">
 
-        {/* 1. Desktop Hero Showcase */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -276,7 +262,6 @@ const SoftWindTemplatePage = () => {
           />
         </motion.div>
 
-        {/* 2. Features Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -291,7 +276,6 @@ const SoftWindTemplatePage = () => {
           />
         </motion.div>
 
-        {/* 3. Blog/Safety Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -310,7 +294,6 @@ const SoftWindTemplatePage = () => {
 
       </div>
 
-      {/* Other Works Section */}
       <div
         className="relative z-10 w-full bg-[#121314] pt-10 pb-28 md:pb-48 [clip-path:polygon(0_0,100%_0,100%_95%,0_100%)] md:[clip-path:polygon(0_0,100%_0,100%_82%,0_100%)]"
       >
@@ -342,7 +325,6 @@ const SoftWindTemplatePage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            {/* Project 1: Soft Wind Template */}
             <motion.div
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -351,13 +333,12 @@ const SoftWindTemplatePage = () => {
             >
               <Link to="/projects/soft-wind-template" className="group block">
                 <div className="overflow-hidden aspect-[16/10] mb-6 relative">
-                  {/* Hover Image */}
                   <img
                     src={nimg2}
                     alt="Soft Wind Template Hover"
                     className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
-                  {/* Default Image */}
+
                   <img
                     src={nimg1}
                     alt="Soft Wind Template"
@@ -379,7 +360,6 @@ const SoftWindTemplatePage = () => {
               </Link>
             </motion.div>
 
-            {/* Project 2: Trucker Path App */}
             <motion.div
               initial={{ x: 100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}

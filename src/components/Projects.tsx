@@ -68,10 +68,8 @@ const Projects = () => {
     return (
         <section className="relative w-full bg-white py-20 z-20 overflow-hidden" id="projects">
 
-            {/* Header Section */}
             <div className="max-w-[1240px] mx-auto px-6 md:px-12 mb-6 md:mb-16">
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12">
-                    {/* Left: Heading & Button */}
                     <div className="flex flex-col items-start gap-6">
                         <motion.div
                             className="relative inline-block"
@@ -93,7 +91,6 @@ const Projects = () => {
                                     </motion.span>
                                 ))}
                             </motion.h2>
-                            {/* Purple Accent Line matching 'Who am I' style */}
                             <motion.div
                                 className="absolute top-[15%] left-[-1%] w-[30%] h-[7px] md:h-[7px] bg-[#9333ea] transform -rotate-10 z-20 mix-blend-multiply opacity-90 pointer-events-none"
                                 initial={{ width: 0, opacity: 0 }}
@@ -103,7 +100,6 @@ const Projects = () => {
                             />
                         </motion.div>
 
-                        {/* Button matching 'Get Resume' style */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +123,6 @@ const Projects = () => {
                         </motion.div>
                     </div>
 
-                    {/* Right: Description */}
                     <motion.div
                         className="max-w-xl md:text-right pb-0 md:pb-4"
                         initial="hidden"
@@ -159,7 +154,6 @@ const Projects = () => {
                 </div>
             </div>
 
-            {/* Projects List */}
             <div className="flex flex-col gap-0">
                 {projectsData.map((project, index) => (
                     <ProjectItem
